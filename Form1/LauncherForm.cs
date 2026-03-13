@@ -105,7 +105,9 @@ namespace Form1
 
 		private TabPage LauncherTabRunGame;
 
-		private Panel LauncherGameOptionsPanel;
+        private TabPage LauncherTabExplorer;
+        
+        private Panel LauncherGameOptionsPanel;
 
 		private GroupBox LauncherRunGameCustomCommandLineGroupBox;
 
@@ -430,7 +432,7 @@ namespace Form1
 
 		private void EnableControls(bool enabled, TabPage onlyForTabPage)
 		{
-			TabPage[] array = new TabPage[3] { LauncherTabCompileLevel, LauncherTabModBuilder, LauncherTabRunGame };
+			TabPage[] array = new TabPage[4] { LauncherTabCompileLevel, LauncherTabModBuilder, LauncherTabRunGame, LauncherTabExplorer };
 			foreach (TabPage tabPage in array)
 			{
 				if (onlyForTabPage != null && onlyForTabPage != tabPage)
@@ -541,6 +543,7 @@ namespace Form1
             this.LauncherProcessTimeElapsedTextBox = new System.Windows.Forms.TextBox();
             this.LauncherTab = new System.Windows.Forms.TabControl();
             this.LauncherTabCompileLevel = new System.Windows.Forms.TabPage();
+			this.LauncherTabExplorer = new System.Windows.Forms.TabPage();
             this.LauncherCreateMapButton = new DevComponents.DotNetBar.ButtonX();
             this.LauncherDeleteMapButton = new DevComponents.DotNetBar.ButtonX();
             this.LauncherCompileLevelOptionsGroupBox = new System.Windows.Forms.GroupBox();
@@ -623,6 +626,7 @@ namespace Form1
             this.LauncherProcessGroupBox.SuspendLayout();
             this.LauncherTab.SuspendLayout();
             this.LauncherTabCompileLevel.SuspendLayout();
+            this.LauncherTabExplorer.SuspendLayout();            
             this.LauncherCompileLevelOptionsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LauncherAssetCountGridView)).BeginInit();
             this.LauncherGridFileGroupBox.SuspendLayout();
@@ -773,12 +777,23 @@ namespace Form1
             this.LauncherTab.Controls.Add(this.LauncherTabCompileLevel);
             this.LauncherTab.Controls.Add(this.LauncherTabModBuilder);
             this.LauncherTab.Controls.Add(this.LauncherTabRunGame);
+            this.LauncherTab.Controls.Add(this.LauncherTabExplorer);
             this.LauncherTab.Location = new System.Drawing.Point(149, 1);
             this.LauncherTab.Name = "LauncherTab";
             this.LauncherTab.Padding = new System.Drawing.Point(0, 0);
             this.LauncherTab.SelectedIndex = 0;
             this.LauncherTab.Size = new System.Drawing.Size(771, 376);
             this.LauncherTab.TabIndex = 0;
+            // 
+            // LauncherTabExplore
+            // 
+            this.LauncherTabExplorer.BackColor = System.Drawing.Color.Transparent;
+            this.LauncherTabExplorer.Location = new System.Drawing.Point(4, 25);
+            this.LauncherTabExplorer.Name = "LauncherTabExplore";
+            this.LauncherTabExplorer.Padding = new System.Windows.Forms.Padding(3);
+            this.LauncherTabExplorer.Size = new System.Drawing.Size(763, 347);
+            this.LauncherTabExplorer.TabIndex = 0;
+            this.LauncherTabExplorer.Text = "Explore";
             // 
             // LauncherTabCompileLevel
             // 
@@ -3154,5 +3169,17 @@ namespace Form1
 		{
 			LauncherRunGameModComboBox.DroppedDown = true;
 		}
+
+        private void ExploreOpenDir(string dir)
+        {
+            if (Directory.Exists(dir))
+            {
+                Process.Start(dir);
+            }
+            else
+            {
+                MessageBox.Show("Could not find directory:\n" + dir, "Error");
+            }
+        }
     }
 }
