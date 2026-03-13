@@ -8,7 +8,7 @@ using System.Runtime.Versioning;
 [assembly: AssemblyDescription("Modtools Launcher")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCopyright("Copyright © Activision 2008")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("2.0.0.0")]
 [assembly: Guid("a1b9596d-b77c-4efe-a1fd-e651b55ab5b9")]
 [assembly: ComVisible(false)]
 [assembly: AssemblyCompany("Activision")]

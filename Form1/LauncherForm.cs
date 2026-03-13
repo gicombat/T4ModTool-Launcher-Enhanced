@@ -527,8 +527,7 @@ namespace Form1
 		private void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LauncherForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LauncherTimer = new System.Windows.Forms.Timer(this.components);
             this.LauncherWikiLabel = new System.Windows.Forms.LinkLabel();
             this.LauncherAboutLabel = new System.Windows.Forms.LinkLabel();
@@ -896,14 +895,14 @@ namespace Form1
             this.LauncherAssetCountGridView.Name = "LauncherAssetCountGridView";
             this.LauncherAssetCountGridView.ReadOnly = true;
             this.LauncherAssetCountGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.LauncherAssetCountGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.LauncherAssetCountGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.LauncherAssetCountGridView.RowHeadersVisible = false;
             this.LauncherAssetCountGridView.RowTemplate.Height = 20;
             this.LauncherAssetCountGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
@@ -1650,7 +1649,6 @@ namespace Form1
             | System.Windows.Forms.AnchorStyles.Left)));
             this.LauncherApplicationsGroupBox.BackColor = System.Drawing.Color.Transparent;
             this.LauncherApplicationsGroupBox.Controls.Add(this.LauncherClearConsoleButton);
-            // this.LauncherApplicationsGroupBox.Controls.Add(this.LauncherButtonWeaponEditor);
             this.LauncherApplicationsGroupBox.Controls.Add(this.LauncherButtonBlender);
             this.LauncherApplicationsGroupBox.Controls.Add(this.LauncherButtonGameUtilsImage);
             this.LauncherApplicationsGroupBox.Controls.Add(this.LauncherButtonSoundTools);
@@ -1678,65 +1676,49 @@ namespace Form1
             this.LauncherClearConsoleButton.TabIndex = 14;
             this.LauncherClearConsoleButton.Text = "Clear Console";
             this.LauncherClearConsoleButton.Click += new System.EventHandler(this.LauncherClearConsoleButton_Click);
-			// 
-			// LauncherButtonWeaponEditor /* Disabled this shit, we don't need it
-			// 
-			//this.LauncherButtonWeaponEditor.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			//this.LauncherButtonWeaponEditor.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-			//this.LauncherButtonWeaponEditor.FocusCuesEnabled = false;
-			//this.LauncherButtonWeaponEditor.Location = new System.Drawing.Point(6, 171);
-			//this.LauncherButtonWeaponEditor.Name = "LauncherButtonWeaponEditor";
-			//this.LauncherButtonWeaponEditor.Size = new System.Drawing.Size(128, 32);
-			//this.LauncherButtonWeaponEditor.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			//this.LauncherButtonWeaponEditor.TabIndex = 11;
-			//this.LauncherButtonWeaponEditor.Text = "Weapon Editor";
-			//this.LauncherButtonWeaponEditor.Visible = true;
-			//this.LauncherButtonWeaponEditor.Click += new System.EventHandler(this.LauncherButtonWeaponEditor_Click);
-			// 
-			// LauncherButtonBlender
-			// 
-			this.LauncherButtonBlender.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.LauncherButtonBlender.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-			this.LauncherButtonBlender.FocusCuesEnabled = false;
-			this.LauncherButtonBlender.Location = new System.Drawing.Point(6, 171);
-			this.LauncherButtonBlender.Name = "LauncherButtonWeaponEditor";
-			this.LauncherButtonBlender.Size = new System.Drawing.Size(128, 32);
-			this.LauncherButtonBlender.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.LauncherButtonBlender.TabIndex = 11;
-			this.LauncherButtonBlender.Text = "Blender";
-			this.LauncherButtonBlender.Click += new System.EventHandler(this.LauncherButtonWeaponEditor_Click);
-			// 
-			// LauncherButtonGameUtilsImage
-			//
-			this.LauncherButtonGameUtilsImage.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.LauncherButtonGameUtilsImage.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-			this.LauncherButtonGameUtilsImage.FocusCuesEnabled = false;
-			this.LauncherButtonGameUtilsImage.Location = new System.Drawing.Point(6, 209);
-			this.LauncherButtonGameUtilsImage.Name = "LauncherButtonWeaponEditor";
-			this.LauncherButtonGameUtilsImage.Size = new System.Drawing.Size(128, 32);
-			this.LauncherButtonGameUtilsImage.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.LauncherButtonGameUtilsImage.TabIndex = 12;
-			this.LauncherButtonGameUtilsImage.Text = "Game Utils Image";
-			this.LauncherButtonGameUtilsImage.Visible = true;
-			this.LauncherButtonGameUtilsImage.Click += new System.EventHandler(this.LauncherButtonWeaponEditor_Click);
-			// 
-			// LauncherButtonSoundTools
-			// 
-			this.LauncherButtonSoundTools.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-			this.LauncherButtonSoundTools.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-			this.LauncherButtonSoundTools.FocusCuesEnabled = false;
-			this.LauncherButtonSoundTools.Location = new System.Drawing.Point(6, 247);
-			this.LauncherButtonSoundTools.Name = "LauncherButtonWeaponEditor";
-			this.LauncherButtonSoundTools.Size = new System.Drawing.Size(128, 32);
-			this.LauncherButtonSoundTools.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-			this.LauncherButtonSoundTools.TabIndex = 13;
-			this.LauncherButtonSoundTools.Text = "Sound Tools";
-			this.LauncherButtonSoundTools.Visible = true;
-			this.LauncherButtonSoundTools.Click += new System.EventHandler(this.LauncherButtonWeaponEditor_Click);
-			// 
-			// LauncherButtonAssetViewer
-			// 
-			this.LauncherButtonAssetViewer.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            // 
+            // LauncherButtonBlender
+            // 
+            this.LauncherButtonBlender.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.LauncherButtonBlender.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.LauncherButtonBlender.FocusCuesEnabled = false;
+            this.LauncherButtonBlender.Location = new System.Drawing.Point(6, 171);
+            this.LauncherButtonBlender.Name = "LauncherButtonWeaponEditor";
+            this.LauncherButtonBlender.Size = new System.Drawing.Size(128, 32);
+            this.LauncherButtonBlender.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.LauncherButtonBlender.TabIndex = 11;
+            this.LauncherButtonBlender.Text = "Blender";
+            this.LauncherButtonBlender.Click += new System.EventHandler(this.LauncherButtonBlender_Click);
+            // 
+            // LauncherButtonGameUtilsImage
+            // 
+            this.LauncherButtonGameUtilsImage.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.LauncherButtonGameUtilsImage.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.LauncherButtonGameUtilsImage.FocusCuesEnabled = false;
+            this.LauncherButtonGameUtilsImage.Location = new System.Drawing.Point(6, 209);
+            this.LauncherButtonGameUtilsImage.Name = "LauncherButtonWeaponEditor";
+            this.LauncherButtonGameUtilsImage.Size = new System.Drawing.Size(128, 32);
+            this.LauncherButtonGameUtilsImage.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.LauncherButtonGameUtilsImage.TabIndex = 12;
+            this.LauncherButtonGameUtilsImage.Text = "Game Utils Image";
+            this.LauncherButtonGameUtilsImage.Click += new System.EventHandler(this.LauncherButtonGameUtils_Click);
+            // 
+            // LauncherButtonSoundTools
+            // 
+            this.LauncherButtonSoundTools.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.LauncherButtonSoundTools.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.LauncherButtonSoundTools.FocusCuesEnabled = false;
+            this.LauncherButtonSoundTools.Location = new System.Drawing.Point(6, 247);
+            this.LauncherButtonSoundTools.Name = "LauncherButtonWeaponEditor";
+            this.LauncherButtonSoundTools.Size = new System.Drawing.Size(128, 32);
+            this.LauncherButtonSoundTools.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.LauncherButtonSoundTools.TabIndex = 13;
+            this.LauncherButtonSoundTools.Text = "Sound Tools";
+            this.LauncherButtonSoundTools.Click += new System.EventHandler(this.LauncherButtonSoundTool_Click);
+            // 
+            // LauncherButtonAssetViewer
+            // 
+            this.LauncherButtonAssetViewer.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.LauncherButtonAssetViewer.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.LauncherButtonAssetViewer.FocusCuesEnabled = false;
             this.LauncherButtonAssetViewer.Location = new System.Drawing.Point(6, 133);
@@ -1855,7 +1837,9 @@ namespace Form1
             this.LauncherConsole.Margin = new System.Windows.Forms.Padding(0);
             this.LauncherConsole.Name = "LauncherConsole";
             this.LauncherConsole.ReadOnly = true;
-            this.LauncherConsole.Rtf = resources.GetString("LauncherConsole.Rtf");
+            this.LauncherConsole.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1036{\\fonttbl{\\f0\\fnil\\fcharset0 " +
+    "Microsoft Sans Serif;}}\r\n{\\*\\generator Riched20 10.0.22621}\\viewkind4\\uc1 \r\n\\par" +
+    "d\\b\\f0\\fs18\\par\r\n}\r\n";
             this.LauncherConsole.Size = new System.Drawing.Size(765, 275);
             this.LauncherConsole.TabIndex = 5;
             this.LauncherConsole.WordWrap = false;
@@ -1918,15 +1902,30 @@ namespace Form1
 
 		private void LauncherAboutLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-			MessageBoxEx.Show("Original launcher by\n     Mike Denny\n\nPC Programming Lead\n     Krassimir Touevsky\n\nPC Programming Team\n     Yanbing Chen\n     Juan Morelli\n     Ewan Oughton\n     Valeria Pelova\n     Dimiter \"malkia\" Stanev\n\nPC Production Team\n     Adam Saslow\n     Cesar Stastny\n\nPC Modding Team\n     Tony Kramer\n     Gavin Niebel\n     Alex 'Sparks' Romo\n***********************************\nUpdates by\n     DidUknowiPwn\n     Elfenlied\n     Icedream\n     master131\n     momo5502\n     SE2Dev\n***********************************\nSpecial Thanks to\n     Treyarch", "About Launcher V1.1");
+			MessageBoxEx.Show("Original launcher by\n     Mike Denny\n\nPC Programming Lead\n     Krassimir Touevsky\n\nPC Programming Team\n     Yanbing Chen\n     Juan Morelli\n     Ewan Oughton\n     Valeria Pelova\n     Dimiter \"malkia\" Stanev\n\nPC Production Team\n     Adam Saslow\n     Cesar Stastny\n\nPC Modding Team\n     Tony Kramer\n     Gavin Niebel\n     Alex 'Sparks' Romo\n***********************************\nUpdates by\n     DidUknowiPwn\n     Elfenlied\n     Icedream\n     master131\n     momo5502\n     SE2Dev\n     gicombat\n***********************************\nSpecial Thanks to\n     Treyarch", "About Launcher V2.0");
 		}
 
 		private void LauncherButtonAssetManager_Click(object sender, EventArgs e)
 		{
 			LaunchProcess("asset_manager", "", null, consoleAttached: false, null);
-		}
+        }
 
-		private void LauncherButtonAssetViewer_Click(object sender, EventArgs e)
+        private void LauncherButtonSoundTool_Click(object sender, EventArgs e)
+        {
+            LaunchProcess("asset_manager", "", null, consoleAttached: false, null);
+        }
+
+        private void LauncherButtonBlender_Click(object sender, EventArgs e)
+        {
+            LaunchProcess("blender", "", null, consoleAttached: false, null, "..\\..\\Tools\\Blender\\");
+        }
+
+        private void LauncherButtonGameUtils_Click(object sender, EventArgs e)
+        {
+			LaunchProcess("GameImageUtil", "", null, consoleAttached: false, null, "..\\..\\Tools\\GameImageUtil\\");
+        }
+
+        private void LauncherButtonAssetViewer_Click(object sender, EventArgs e)
 		{
 			LaunchProcess("AssetViewer", "", null, consoleAttached: false, null);
 		}
@@ -2063,7 +2062,7 @@ namespace Form1
 			LauncherModsDirectorySystemWatcher.Path = Launcher.GetModsDirectory();
 			LauncherMapFilesSystemWatcher.EnableRaisingEvents = true;
 			LauncherModsDirectorySystemWatcher.EnableRaisingEvents = true;
-			Text = Text + " V1.1 - " + Launcher.GetRootDirectory();
+			Text = Text + " V2.0 - " + Launcher.GetRootDirectory();
 			LauncherModLanguageComboBox.SelectedIndex = 0;
 			LauncherModLanguageComboBox.SelectedIndexChanged += LauncherModLanguageComboBox_SelectedIndexChanged;
 		}
@@ -2307,7 +2306,7 @@ namespace Form1
 			Process.Start("http://wiki.modsrepository.com/");
 		}
 
-		private void LaunchProcessHelper(bool shouldRun, ProcessFinishedDelegate nextStage, Process lastProcess, string processName, string processOptions, string workingDirectory)
+		private void LaunchProcessHelper(bool shouldRun, ProcessFinishedDelegate nextStage, Process lastProcess, string processName, string processOptions, string workingDirectory, string pathToExe = null)
 		{
 			if ((lastProcess != null && lastProcess.ExitCode != 0) || !shouldRun)
 			{
@@ -2315,16 +2314,16 @@ namespace Form1
 			}
 			else
 			{
-				LaunchProcess(processName, processOptions, workingDirectory, consoleAttached: true, nextStage);
+				LaunchProcess(processName, processOptions, workingDirectory, consoleAttached: true, nextStage, pathToExe);
 			}
 		}
 
-		private void LaunchProcessHelper(bool shouldRun, ProcessFinishedDelegate nextStage, Process lastProcess, string processName, string processOptions)
+		private void LaunchProcessHelper(bool shouldRun, ProcessFinishedDelegate nextStage, Process lastProcess, string processName, string processOptions, string pathToExe = null)
 		{
-			LaunchProcessHelper(shouldRun, nextStage, lastProcess, processName, processOptions, null);
+			LaunchProcessHelper(shouldRun, nextStage, lastProcess, processName, processOptions, null, pathToExe);
 		}
 
-		private void LaunchProcess(string processFileName, string arguments, string workingDirectory, bool consoleAttached, ProcessFinishedDelegate theProcessFinishedDelegate)
+		private void LaunchProcess(string processFileName, string arguments, string workingDirectory, bool consoleAttached, ProcessFinishedDelegate theProcessFinishedDelegate, string pathToExe = null)
 		{
 			if (consoleProcess != null && consoleAttached)
 			{
@@ -2337,8 +2336,12 @@ namespace Form1
 			}
 			try
 			{
+				if (pathToExe == null)
+				{
+					pathToExe = Launcher.GetStartupDirectory();
+                }
 				Process p = new Process();
-				p.StartInfo.FileName = Path.Combine(Launcher.GetStartupDirectory(), processFileName);
+				p.StartInfo.FileName = Path.Combine(pathToExe, processFileName);
 				p.StartInfo.CreateNoWindow = true;
 				p.StartInfo.Arguments = arguments;
 				p.StartInfo.UseShellExecute = false;
