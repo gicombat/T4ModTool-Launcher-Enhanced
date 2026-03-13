@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <Compile Update="Form1\BspOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form1\CreateMapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form1\LauncherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form1\LightOptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
