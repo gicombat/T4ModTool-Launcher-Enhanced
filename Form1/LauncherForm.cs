@@ -105,7 +105,7 @@ namespace Form1
 
 		private TabPage LauncherTabRunGame;
 
-        private TabPage LauncherTabExplorer;
+        private TabPage LauncherTabExplore;
         
         private Panel LauncherGameOptionsPanel;
 
@@ -219,7 +219,79 @@ namespace Form1
         private ButtonX LauncherButtonBlender;
         private ButtonX LauncherButtonGameUtilsImage;
         private ButtonX LauncherButtonSoundTools;
-        
+
+
+
+        private GroupBox LauncherExploreGroupBox;
+
+        private GroupBox LauncherExploreRawDirGroupBox;
+
+        private Button LauncherExploreRawDirWeaponsButton;
+
+        private Button LauncherExploreRawDirVisionButton;
+
+        private Button LauncherExploreRawDirAnimTreesButton;
+
+        private Button LauncherExploreRawDirSoundAliasesButton;
+
+        private Button LauncherExploreRawDirCSCButton;
+
+        private Button LauncherExploreRawDirGSCButton;
+
+        private GroupBox LauncherExploreDevDirGroupBox;
+
+        private Button LauncherExploreDevDirRawButton;
+
+        private Button LauncherExploreDevDirModelExportButton;
+
+        private Button LauncherExploreDevDirTextureAssetsButton;
+
+        private Button LauncherExploreDevDirSrcDataButton;
+
+        private Button LauncherExploreDevDirMapSrcButton;
+
+        private Button LauncherExploreDevDirBinButton;
+
+        private Button LauncherExploreDevDirZoneSourceButton;
+
+        private GroupBox LauncherExploreBlopsDirGroupBox;
+
+        private Button LauncherExploreBlopsDirConfigsButton;
+
+        private Button LauncherExploreBlopsDirModsButton;
+
+        private Button LauncherExploreBlopsDirGameButton;
+
+        private Button LauncherExploreRawDirMPButton;
+
+        private GroupBox LauncherExploreRawMapsDirGroupBox;
+
+        private Button LauncherExploreRawGSCDirMPGametypesButton;
+
+        private Button LauncherExploreRawGSCDirMPFXButton;
+
+        private Button LauncherExploreRawGSCDirMPArtButton;
+
+        private Button LauncherExploreRawGSCDirMPButton;
+
+        private Button LauncherExploreRawGSCDirSPVoiceButton;
+
+        private Button LauncherExploreRawGSCDirSPGametypesButton;
+
+        private Button LauncherExploreRawGSCDirSPFXButton;
+
+        private Button LauncherExploreRawGSCDirSPArtButton;
+
+        private Button LauncherExploreRawGSCDirSPButton;
+        private GroupBox LauncherExploreLocalizationFolder;
+        private Button LauncherExploreLocalizationGerman;
+        private Button LauncherExploreLocalizationItalian;
+        private Button LauncherExploreLocalizationFrench;
+        private Button LauncherExploreLocalizationSpanish;
+        private Button LauncherExploreLocalizationEnglish;
+        private Button LauncherExploreLocalizationRussian;
+        private Button LauncherExploreLocalizationPolish;
+        private Button LauncherExploreLocalizationKorean;
         private Hashtable processTable = new Hashtable();
 
 		private event ProcessFinishedDelegate processFinishedDelegate;
@@ -432,7 +504,7 @@ namespace Form1
 
 		private void EnableControls(bool enabled, TabPage onlyForTabPage)
 		{
-			TabPage[] array = new TabPage[4] { LauncherTabCompileLevel, LauncherTabModBuilder, LauncherTabRunGame, LauncherTabExplorer };
+			TabPage[] array = new TabPage[4] { LauncherTabCompileLevel, LauncherTabModBuilder, LauncherTabRunGame, LauncherTabExplore };
 			foreach (TabPage tabPage in array)
 			{
 				if (onlyForTabPage != null && onlyForTabPage != tabPage)
@@ -543,7 +615,6 @@ namespace Form1
             this.LauncherProcessTimeElapsedTextBox = new System.Windows.Forms.TextBox();
             this.LauncherTab = new System.Windows.Forms.TabControl();
             this.LauncherTabCompileLevel = new System.Windows.Forms.TabPage();
-			this.LauncherTabExplorer = new System.Windows.Forms.TabPage();
             this.LauncherCreateMapButton = new DevComponents.DotNetBar.ButtonX();
             this.LauncherDeleteMapButton = new DevComponents.DotNetBar.ButtonX();
             this.LauncherCompileLevelOptionsGroupBox = new System.Windows.Forms.GroupBox();
@@ -582,12 +653,12 @@ namespace Form1
             this.LauncherIwdFileTree = new System.Windows.Forms.TreeView();
             this.LauncherLocalizedCsvGroupBox = new System.Windows.Forms.GroupBox();
             this.LauncherLocalizedCsvTextBox = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
-            this.LauncherFastFileCsvGroupBox = new System.Windows.Forms.GroupBox();
-            this.LauncherFastFileCsvTextBox = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
-            this.LauncherModGroupBox = new System.Windows.Forms.GroupBox();
             this.LauncherModLanguageLabel = new DevComponents.DotNetBar.LabelX();
             this.LauncherModLanguageComboBox = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.LauncherModBuildLocalizedButton = new DevComponents.DotNetBar.ButtonX();
+            this.LauncherFastFileCsvGroupBox = new System.Windows.Forms.GroupBox();
+            this.LauncherFastFileCsvTextBox = new DevComponents.DotNetBar.Controls.RichTextBoxEx();
+            this.LauncherModGroupBox = new System.Windows.Forms.GroupBox();
             this.LauncherModRefreshButton = new DevComponents.DotNetBar.ButtonX();
             this.LauncherModBuildButton = new DevComponents.DotNetBar.ButtonX();
             this.LauncherModOpenButton = new DevComponents.DotNetBar.ButtonX();
@@ -609,6 +680,47 @@ namespace Form1
             this.LauncherRunGameExeTypeGroupBox = new System.Windows.Forms.GroupBox();
             this.LauncherRunGameExeTypeMpRadioButton = new System.Windows.Forms.RadioButton();
             this.LauncherRunGameTypeRadioButton = new System.Windows.Forms.RadioButton();
+            this.LauncherTabExplore = new System.Windows.Forms.TabPage();
+            this.LauncherExploreGroupBox = new System.Windows.Forms.GroupBox();
+            this.LauncherExploreLocalizationFolder = new System.Windows.Forms.GroupBox();
+            this.LauncherExploreLocalizationPolish = new System.Windows.Forms.Button();
+            this.LauncherExploreLocalizationKorean = new System.Windows.Forms.Button();
+            this.LauncherExploreLocalizationRussian = new System.Windows.Forms.Button();
+            this.LauncherExploreLocalizationGerman = new System.Windows.Forms.Button();
+            this.LauncherExploreLocalizationItalian = new System.Windows.Forms.Button();
+            this.LauncherExploreLocalizationFrench = new System.Windows.Forms.Button();
+            this.LauncherExploreLocalizationSpanish = new System.Windows.Forms.Button();
+            this.LauncherExploreLocalizationEnglish = new System.Windows.Forms.Button();
+            this.LauncherExploreRawMapsDirGroupBox = new System.Windows.Forms.GroupBox();
+            this.LauncherExploreRawGSCDirMPGametypesButton = new System.Windows.Forms.Button();
+            this.LauncherExploreRawGSCDirMPFXButton = new System.Windows.Forms.Button();
+            this.LauncherExploreRawGSCDirMPArtButton = new System.Windows.Forms.Button();
+            this.LauncherExploreRawGSCDirMPButton = new System.Windows.Forms.Button();
+            this.LauncherExploreRawGSCDirSPVoiceButton = new System.Windows.Forms.Button();
+            this.LauncherExploreRawGSCDirSPGametypesButton = new System.Windows.Forms.Button();
+            this.LauncherExploreRawGSCDirSPFXButton = new System.Windows.Forms.Button();
+            this.LauncherExploreRawGSCDirSPArtButton = new System.Windows.Forms.Button();
+            this.LauncherExploreRawGSCDirSPButton = new System.Windows.Forms.Button();
+            this.LauncherExploreRawDirGroupBox = new System.Windows.Forms.GroupBox();
+            this.LauncherExploreRawDirMPButton = new System.Windows.Forms.Button();
+            this.LauncherExploreRawDirWeaponsButton = new System.Windows.Forms.Button();
+            this.LauncherExploreRawDirVisionButton = new System.Windows.Forms.Button();
+            this.LauncherExploreRawDirAnimTreesButton = new System.Windows.Forms.Button();
+            this.LauncherExploreRawDirSoundAliasesButton = new System.Windows.Forms.Button();
+            this.LauncherExploreRawDirCSCButton = new System.Windows.Forms.Button();
+            this.LauncherExploreRawDirGSCButton = new System.Windows.Forms.Button();
+            this.LauncherExploreDevDirGroupBox = new System.Windows.Forms.GroupBox();
+            this.LauncherExploreDevDirRawButton = new System.Windows.Forms.Button();
+            this.LauncherExploreDevDirModelExportButton = new System.Windows.Forms.Button();
+            this.LauncherExploreDevDirTextureAssetsButton = new System.Windows.Forms.Button();
+            this.LauncherExploreDevDirSrcDataButton = new System.Windows.Forms.Button();
+            this.LauncherExploreDevDirMapSrcButton = new System.Windows.Forms.Button();
+            this.LauncherExploreDevDirBinButton = new System.Windows.Forms.Button();
+            this.LauncherExploreDevDirZoneSourceButton = new System.Windows.Forms.Button();
+            this.LauncherExploreBlopsDirGroupBox = new System.Windows.Forms.GroupBox();
+            this.LauncherExploreBlopsDirConfigsButton = new System.Windows.Forms.Button();
+            this.LauncherExploreBlopsDirModsButton = new System.Windows.Forms.Button();
+            this.LauncherExploreBlopsDirGameButton = new System.Windows.Forms.Button();
             this.LauncherApplicationsGroupBox = new System.Windows.Forms.GroupBox();
             this.LauncherClearConsoleButton = new DevComponents.DotNetBar.ButtonX();
             this.LauncherButtonBlender = new DevComponents.DotNetBar.ButtonX();
@@ -626,7 +738,6 @@ namespace Form1
             this.LauncherProcessGroupBox.SuspendLayout();
             this.LauncherTab.SuspendLayout();
             this.LauncherTabCompileLevel.SuspendLayout();
-            this.LauncherTabExplorer.SuspendLayout();            
             this.LauncherCompileLevelOptionsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LauncherAssetCountGridView)).BeginInit();
             this.LauncherGridFileGroupBox.SuspendLayout();
@@ -641,6 +752,13 @@ namespace Form1
             this.LauncherRunGameCommandLineGroupBox.SuspendLayout();
             this.LauncherRunGameModGroupBox.SuspendLayout();
             this.LauncherRunGameExeTypeGroupBox.SuspendLayout();
+            this.LauncherTabExplore.SuspendLayout();
+            this.LauncherExploreGroupBox.SuspendLayout();
+            this.LauncherExploreLocalizationFolder.SuspendLayout();
+            this.LauncherExploreRawMapsDirGroupBox.SuspendLayout();
+            this.LauncherExploreRawDirGroupBox.SuspendLayout();
+            this.LauncherExploreDevDirGroupBox.SuspendLayout();
+            this.LauncherExploreBlopsDirGroupBox.SuspendLayout();
             this.LauncherApplicationsGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LauncherSplitter)).BeginInit();
             this.LauncherSplitter.Panel1.SuspendLayout();
@@ -757,16 +875,16 @@ namespace Form1
             this.LauncherProcessTextBox.Name = "LauncherProcessTextBox";
             this.LauncherProcessTextBox.ReadOnly = true;
             this.LauncherProcessTextBox.ShortcutsEnabled = false;
-            this.LauncherProcessTextBox.Size = new System.Drawing.Size(650, 22);
+            this.LauncherProcessTextBox.Size = new System.Drawing.Size(650, 20);
             this.LauncherProcessTextBox.TabIndex = 3;
             // 
             // LauncherProcessTimeElapsedTextBox
             // 
             this.LauncherProcessTimeElapsedTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.LauncherProcessTimeElapsedTextBox.Location = new System.Drawing.Point(810, 284);
+            this.LauncherProcessTimeElapsedTextBox.Location = new System.Drawing.Point(805, 284);
             this.LauncherProcessTimeElapsedTextBox.Name = "LauncherProcessTimeElapsedTextBox";
             this.LauncherProcessTimeElapsedTextBox.ReadOnly = true;
-            this.LauncherProcessTimeElapsedTextBox.Size = new System.Drawing.Size(64, 22);
+            this.LauncherProcessTimeElapsedTextBox.Size = new System.Drawing.Size(69, 20);
             this.LauncherProcessTimeElapsedTextBox.TabIndex = 4;
             // 
             // LauncherTab
@@ -777,23 +895,13 @@ namespace Form1
             this.LauncherTab.Controls.Add(this.LauncherTabCompileLevel);
             this.LauncherTab.Controls.Add(this.LauncherTabModBuilder);
             this.LauncherTab.Controls.Add(this.LauncherTabRunGame);
-            this.LauncherTab.Controls.Add(this.LauncherTabExplorer);
+            this.LauncherTab.Controls.Add(this.LauncherTabExplore);
             this.LauncherTab.Location = new System.Drawing.Point(149, 1);
             this.LauncherTab.Name = "LauncherTab";
             this.LauncherTab.Padding = new System.Drawing.Point(0, 0);
             this.LauncherTab.SelectedIndex = 0;
             this.LauncherTab.Size = new System.Drawing.Size(771, 376);
             this.LauncherTab.TabIndex = 0;
-            // 
-            // LauncherTabExplore
-            // 
-            this.LauncherTabExplorer.BackColor = System.Drawing.Color.Transparent;
-            this.LauncherTabExplorer.Location = new System.Drawing.Point(4, 25);
-            this.LauncherTabExplorer.Name = "LauncherTabExplore";
-            this.LauncherTabExplorer.Padding = new System.Windows.Forms.Padding(3);
-            this.LauncherTabExplorer.Size = new System.Drawing.Size(763, 347);
-            this.LauncherTabExplorer.TabIndex = 0;
-            this.LauncherTabExplorer.Text = "Explore";
             // 
             // LauncherTabCompileLevel
             // 
@@ -802,10 +910,10 @@ namespace Form1
             this.LauncherTabCompileLevel.Controls.Add(this.LauncherDeleteMapButton);
             this.LauncherTabCompileLevel.Controls.Add(this.LauncherCompileLevelOptionsGroupBox);
             this.LauncherTabCompileLevel.Controls.Add(this.LauncherMapList);
-            this.LauncherTabCompileLevel.Location = new System.Drawing.Point(4, 25);
+            this.LauncherTabCompileLevel.Location = new System.Drawing.Point(4, 22);
             this.LauncherTabCompileLevel.Name = "LauncherTabCompileLevel";
             this.LauncherTabCompileLevel.Padding = new System.Windows.Forms.Padding(3);
-            this.LauncherTabCompileLevel.Size = new System.Drawing.Size(763, 347);
+            this.LauncherTabCompileLevel.Size = new System.Drawing.Size(763, 350);
             this.LauncherTabCompileLevel.TabIndex = 0;
             this.LauncherTabCompileLevel.Text = "Compile FF";
             // 
@@ -863,7 +971,7 @@ namespace Form1
             this.LauncherCompileLevelOptionsGroupBox.Location = new System.Drawing.Point(216, 6);
             this.LauncherCompileLevelOptionsGroupBox.MinimumSize = new System.Drawing.Size(364, 332);
             this.LauncherCompileLevelOptionsGroupBox.Name = "LauncherCompileLevelOptionsGroupBox";
-            this.LauncherCompileLevelOptionsGroupBox.Size = new System.Drawing.Size(544, 332);
+            this.LauncherCompileLevelOptionsGroupBox.Size = new System.Drawing.Size(544, 335);
             this.LauncherCompileLevelOptionsGroupBox.TabIndex = 3;
             this.LauncherCompileLevelOptionsGroupBox.TabStop = false;
             this.LauncherCompileLevelOptionsGroupBox.Text = "Compile FF Options";
@@ -934,7 +1042,7 @@ namespace Form1
             this.AssetType.HeaderText = "Asset";
             this.AssetType.Name = "AssetType";
             this.AssetType.ReadOnly = true;
-            this.AssetType.Width = 66;
+            this.AssetType.Width = 58;
             // 
             // AssetCount
             // 
@@ -1044,7 +1152,7 @@ namespace Form1
             this.LauncherGridFileGroupBox.Controls.Add(this.LauncherGridEditExistingButton);
             this.LauncherGridFileGroupBox.Controls.Add(this.LauncherGridMakeNewButton);
             this.LauncherGridFileGroupBox.Controls.Add(this.LauncherGridCollectDotsCheckBox);
-            this.LauncherGridFileGroupBox.Location = new System.Drawing.Point(6, 261);
+            this.LauncherGridFileGroupBox.Location = new System.Drawing.Point(6, 264);
             this.LauncherGridFileGroupBox.Name = "LauncherGridFileGroupBox";
             this.LauncherGridFileGroupBox.Size = new System.Drawing.Size(203, 65);
             this.LauncherGridFileGroupBox.TabIndex = 18;
@@ -1082,7 +1190,7 @@ namespace Form1
             this.LauncherGridCollectDotsCheckBox.AutoSize = true;
             this.LauncherGridCollectDotsCheckBox.Location = new System.Drawing.Point(7, 19);
             this.LauncherGridCollectDotsCheckBox.Name = "LauncherGridCollectDotsCheckBox";
-            this.LauncherGridCollectDotsCheckBox.Size = new System.Drawing.Size(146, 20);
+            this.LauncherGridCollectDotsCheckBox.Size = new System.Drawing.Size(120, 17);
             this.LauncherGridCollectDotsCheckBox.TabIndex = 17;
             this.LauncherGridCollectDotsCheckBox.Text = "Models Collect Dots";
             this.LauncherGridCollectDotsCheckBox.UseVisualStyleBackColor = true;
@@ -1103,7 +1211,7 @@ namespace Form1
             this.LauncherMapFFTypeMP.AutoSize = true;
             this.LauncherMapFFTypeMP.Location = new System.Drawing.Point(6, 19);
             this.LauncherMapFFTypeMP.Name = "LauncherMapFFTypeMP";
-            this.LauncherMapFFTypeMP.Size = new System.Drawing.Size(45, 20);
+            this.LauncherMapFFTypeMP.Size = new System.Drawing.Size(41, 17);
             this.LauncherMapFFTypeMP.TabIndex = 22;
             this.LauncherMapFFTypeMP.Text = "MP";
             this.LauncherMapFFTypeMP.UseVisualStyleBackColor = true;
@@ -1115,7 +1223,7 @@ namespace Form1
             this.LauncherMapFFTypeSP.Checked = true;
             this.LauncherMapFFTypeSP.Location = new System.Drawing.Point(62, 19);
             this.LauncherMapFFTypeSP.Name = "LauncherMapFFTypeSP";
-            this.LauncherMapFFTypeSP.Size = new System.Drawing.Size(43, 20);
+            this.LauncherMapFFTypeSP.Size = new System.Drawing.Size(39, 17);
             this.LauncherMapFFTypeSP.TabIndex = 21;
             this.LauncherMapFFTypeSP.TabStop = true;
             this.LauncherMapFFTypeSP.Text = "SP";
@@ -1127,7 +1235,7 @@ namespace Form1
             this.LauncherModSpecificMapCheckBox.AutoSize = true;
             this.LauncherModSpecificMapCheckBox.Location = new System.Drawing.Point(218, 15);
             this.LauncherModSpecificMapCheckBox.Name = "LauncherModSpecificMapCheckBox";
-            this.LauncherModSpecificMapCheckBox.Size = new System.Drawing.Size(134, 20);
+            this.LauncherModSpecificMapCheckBox.Size = new System.Drawing.Size(112, 17);
             this.LauncherModSpecificMapCheckBox.TabIndex = 5;
             this.LauncherModSpecificMapCheckBox.Text = "Mod Specific Map";
             this.LauncherModSpecificMapCheckBox.UseVisualStyleBackColor = true;
@@ -1138,7 +1246,7 @@ namespace Form1
             this.LauncherRunMapAfterCompileCheckBox.AutoSize = true;
             this.LauncherRunMapAfterCompileCheckBox.Location = new System.Drawing.Point(9, 191);
             this.LauncherRunMapAfterCompileCheckBox.Name = "LauncherRunMapAfterCompileCheckBox";
-            this.LauncherRunMapAfterCompileCheckBox.Size = new System.Drawing.Size(163, 20);
+            this.LauncherRunMapAfterCompileCheckBox.Size = new System.Drawing.Size(135, 17);
             this.LauncherRunMapAfterCompileCheckBox.TabIndex = 8;
             this.LauncherRunMapAfterCompileCheckBox.Text = "Run Map After Compile";
             this.LauncherRunMapAfterCompileCheckBox.UseVisualStyleBackColor = true;
@@ -1148,7 +1256,7 @@ namespace Form1
             this.LauncherBspInfoCheckBox.AutoSize = true;
             this.LauncherBspInfoCheckBox.Location = new System.Drawing.Point(9, 168);
             this.LauncherBspInfoCheckBox.Name = "LauncherBspInfoCheckBox";
-            this.LauncherBspInfoCheckBox.Size = new System.Drawing.Size(77, 20);
+            this.LauncherBspInfoCheckBox.Size = new System.Drawing.Size(68, 17);
             this.LauncherBspInfoCheckBox.TabIndex = 7;
             this.LauncherBspInfoCheckBox.Text = "BSP Info";
             this.LauncherBspInfoCheckBox.UseVisualStyleBackColor = true;
@@ -1158,7 +1266,7 @@ namespace Form1
             this.LauncherBuildFastFilesCheckBox.AutoSize = true;
             this.LauncherBuildFastFilesCheckBox.Location = new System.Drawing.Point(9, 145);
             this.LauncherBuildFastFilesCheckBox.Name = "LauncherBuildFastFilesCheckBox";
-            this.LauncherBuildFastFilesCheckBox.Size = new System.Drawing.Size(107, 20);
+            this.LauncherBuildFastFilesCheckBox.Size = new System.Drawing.Size(88, 17);
             this.LauncherBuildFastFilesCheckBox.TabIndex = 6;
             this.LauncherBuildFastFilesCheckBox.Text = "Build FastFile";
             this.LauncherBuildFastFilesCheckBox.UseVisualStyleBackColor = true;
@@ -1168,7 +1276,7 @@ namespace Form1
             this.LauncherCompileReflectionsCheckBox.AutoSize = true;
             this.LauncherCompileReflectionsCheckBox.Location = new System.Drawing.Point(9, 111);
             this.LauncherCompileReflectionsCheckBox.Name = "LauncherCompileReflectionsCheckBox";
-            this.LauncherCompileReflectionsCheckBox.Size = new System.Drawing.Size(146, 20);
+            this.LauncherCompileReflectionsCheckBox.Size = new System.Drawing.Size(119, 17);
             this.LauncherCompileReflectionsCheckBox.TabIndex = 4;
             this.LauncherCompileReflectionsCheckBox.Text = "Compile Reflections";
             this.LauncherCompileReflectionsCheckBox.UseVisualStyleBackColor = true;
@@ -1178,7 +1286,7 @@ namespace Form1
             this.LauncherConnectPathsCheckBox.AutoSize = true;
             this.LauncherConnectPathsCheckBox.Location = new System.Drawing.Point(9, 88);
             this.LauncherConnectPathsCheckBox.Name = "LauncherConnectPathsCheckBox";
-            this.LauncherConnectPathsCheckBox.Size = new System.Drawing.Size(112, 20);
+            this.LauncherConnectPathsCheckBox.Size = new System.Drawing.Size(96, 17);
             this.LauncherConnectPathsCheckBox.TabIndex = 3;
             this.LauncherConnectPathsCheckBox.Text = "Connect Paths";
             this.LauncherConnectPathsCheckBox.UseVisualStyleBackColor = true;
@@ -1189,7 +1297,7 @@ namespace Form1
             this.LauncherCompileVisCheckBox.Enabled = false;
             this.LauncherCompileVisCheckBox.Location = new System.Drawing.Point(9, 65);
             this.LauncherCompileVisCheckBox.Name = "LauncherCompileVisCheckBox";
-            this.LauncherCompileVisCheckBox.Size = new System.Drawing.Size(98, 20);
+            this.LauncherCompileVisCheckBox.Size = new System.Drawing.Size(80, 17);
             this.LauncherCompileVisCheckBox.TabIndex = 2;
             this.LauncherCompileVisCheckBox.Text = "Compile Vis";
             this.LauncherCompileVisCheckBox.UseVisualStyleBackColor = true;
@@ -1199,7 +1307,7 @@ namespace Form1
             this.LauncherCompileLightsCheckBox.AutoSize = true;
             this.LauncherCompileLightsCheckBox.Location = new System.Drawing.Point(9, 42);
             this.LauncherCompileLightsCheckBox.Name = "LauncherCompileLightsCheckBox";
-            this.LauncherCompileLightsCheckBox.Size = new System.Drawing.Size(114, 20);
+            this.LauncherCompileLightsCheckBox.Size = new System.Drawing.Size(94, 17);
             this.LauncherCompileLightsCheckBox.TabIndex = 1;
             this.LauncherCompileLightsCheckBox.Text = "Compile Lights";
             this.LauncherCompileLightsCheckBox.UseVisualStyleBackColor = true;
@@ -1209,7 +1317,7 @@ namespace Form1
             this.LauncherCompileBSPCheckBox.AutoSize = true;
             this.LauncherCompileBSPCheckBox.Location = new System.Drawing.Point(9, 19);
             this.LauncherCompileBSPCheckBox.Name = "LauncherCompileBSPCheckBox";
-            this.LauncherCompileBSPCheckBox.Size = new System.Drawing.Size(106, 20);
+            this.LauncherCompileBSPCheckBox.Size = new System.Drawing.Size(87, 17);
             this.LauncherCompileBSPCheckBox.TabIndex = 0;
             this.LauncherCompileBSPCheckBox.Text = "Compile BSP";
             this.LauncherCompileBSPCheckBox.UseVisualStyleBackColor = true;
@@ -1224,7 +1332,7 @@ namespace Form1
             this.LauncherMapList.IntegralHeight = false;
             this.LauncherMapList.Location = new System.Drawing.Point(6, 7);
             this.LauncherMapList.Name = "LauncherMapList";
-            this.LauncherMapList.Size = new System.Drawing.Size(204, 291);
+            this.LauncherMapList.Size = new System.Drawing.Size(204, 294);
             this.LauncherMapList.TabIndex = 1;
             this.LauncherMapList.SelectedIndexChanged += new System.EventHandler(this.LauncherMapList_SelectedIndexChanged);
             // 
@@ -1236,10 +1344,10 @@ namespace Form1
             this.LauncherTabModBuilder.Controls.Add(this.LauncherFastFileCsvGroupBox);
             this.LauncherTabModBuilder.Controls.Add(this.LauncherModGroupBox);
             this.LauncherTabModBuilder.Controls.Add(this.LauncherModAssetLabel);
-            this.LauncherTabModBuilder.Location = new System.Drawing.Point(4, 25);
+            this.LauncherTabModBuilder.Location = new System.Drawing.Point(4, 22);
             this.LauncherTabModBuilder.Name = "LauncherTabModBuilder";
             this.LauncherTabModBuilder.Padding = new System.Windows.Forms.Padding(3);
-            this.LauncherTabModBuilder.Size = new System.Drawing.Size(763, 347);
+            this.LauncherTabModBuilder.Size = new System.Drawing.Size(763, 350);
             this.LauncherTabModBuilder.TabIndex = 1;
             this.LauncherTabModBuilder.Text = "Mod Builder";
             // 
@@ -1250,9 +1358,9 @@ namespace Form1
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LauncherIwdFileGroupBox.BackColor = System.Drawing.Color.Transparent;
             this.LauncherIwdFileGroupBox.Controls.Add(this.LauncherIwdFileTree);
-            this.LauncherIwdFileGroupBox.Location = new System.Drawing.Point(351, 6);
+            this.LauncherIwdFileGroupBox.Location = new System.Drawing.Point(506, 6);
             this.LauncherIwdFileGroupBox.Name = "LauncherIwdFileGroupBox";
-            this.LauncherIwdFileGroupBox.Size = new System.Drawing.Size(414, 335);
+            this.LauncherIwdFileGroupBox.Size = new System.Drawing.Size(259, 338);
             this.LauncherIwdFileGroupBox.TabIndex = 2;
             this.LauncherIwdFileGroupBox.TabStop = false;
             this.LauncherIwdFileGroupBox.Text = "IWD File List";
@@ -1267,7 +1375,7 @@ namespace Form1
             this.LauncherIwdFileTree.Indent = 15;
             this.LauncherIwdFileTree.Location = new System.Drawing.Point(6, 20);
             this.LauncherIwdFileTree.Name = "LauncherIwdFileTree";
-            this.LauncherIwdFileTree.Size = new System.Drawing.Size(405, 308);
+            this.LauncherIwdFileTree.Size = new System.Drawing.Size(250, 311);
             this.LauncherIwdFileTree.TabIndex = 2;
             this.LauncherIwdFileTree.DoubleClick += new System.EventHandler(this.LauncherIwdFileTree_DoubleClick);
             // 
@@ -1277,9 +1385,12 @@ namespace Form1
             | System.Windows.Forms.AnchorStyles.Left)));
             this.LauncherLocalizedCsvGroupBox.BackColor = System.Drawing.Color.Transparent;
             this.LauncherLocalizedCsvGroupBox.Controls.Add(this.LauncherLocalizedCsvTextBox);
-            this.LauncherLocalizedCsvGroupBox.Location = new System.Drawing.Point(6, 275);
+            this.LauncherLocalizedCsvGroupBox.Controls.Add(this.LauncherModLanguageLabel);
+            this.LauncherLocalizedCsvGroupBox.Controls.Add(this.LauncherModLanguageComboBox);
+            this.LauncherLocalizedCsvGroupBox.Controls.Add(this.LauncherModBuildLocalizedButton);
+            this.LauncherLocalizedCsvGroupBox.Location = new System.Drawing.Point(296, 6);
             this.LauncherLocalizedCsvGroupBox.Name = "LauncherLocalizedCsvGroupBox";
-            this.LauncherLocalizedCsvGroupBox.Size = new System.Drawing.Size(339, 66);
+            this.LauncherLocalizedCsvGroupBox.Size = new System.Drawing.Size(210, 344);
             this.LauncherLocalizedCsvGroupBox.TabIndex = 25;
             this.LauncherLocalizedCsvGroupBox.TabStop = false;
             this.LauncherLocalizedCsvGroupBox.Text = "Localized FF localized_mod.csv (english)";
@@ -1292,63 +1403,14 @@ namespace Form1
             this.LauncherLocalizedCsvTextBox.BackgroundStyle.Class = "RichTextBoxBorder";
             this.LauncherLocalizedCsvTextBox.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.LauncherLocalizedCsvTextBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LauncherLocalizedCsvTextBox.Location = new System.Drawing.Point(7, 18);
+            this.LauncherLocalizedCsvTextBox.Location = new System.Drawing.Point(7, 100);
             this.LauncherLocalizedCsvTextBox.Name = "LauncherLocalizedCsvTextBox";
             this.LauncherLocalizedCsvTextBox.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 " +
-    "Segoe UI;}}\r\n{\\*\\generator Riched20 10.0.22621}\\viewkind4\\uc1 \r\n\\pard\\f0\\fs17\\pa" +
+    "Segoe UI;}}\r\n{\\*\\generator Riched20 10.0.19041}\\viewkind4\\uc1 \r\n\\pard\\f0\\fs17\\pa" +
     "r\r\n}\r\n";
-            this.LauncherLocalizedCsvTextBox.Size = new System.Drawing.Size(326, 42);
+            this.LauncherLocalizedCsvTextBox.Size = new System.Drawing.Size(200, 240);
             this.LauncherLocalizedCsvTextBox.TabIndex = 26;
             this.LauncherLocalizedCsvTextBox.WordWrap = false;
-            // 
-            // LauncherFastFileCsvGroupBox
-            // 
-            this.LauncherFastFileCsvGroupBox.BackColor = System.Drawing.Color.Transparent;
-            this.LauncherFastFileCsvGroupBox.Controls.Add(this.LauncherFastFileCsvTextBox);
-            this.LauncherFastFileCsvGroupBox.Location = new System.Drawing.Point(6, 200);
-            this.LauncherFastFileCsvGroupBox.Name = "LauncherFastFileCsvGroupBox";
-            this.LauncherFastFileCsvGroupBox.Size = new System.Drawing.Size(339, 147);
-            this.LauncherFastFileCsvGroupBox.TabIndex = 19;
-            this.LauncherFastFileCsvGroupBox.TabStop = false;
-            this.LauncherFastFileCsvGroupBox.Text = "FastFile mod.csv";
-            // 
-            // LauncherFastFileCsvTextBox
-            // 
-            // 
-            // 
-            // 
-            this.LauncherFastFileCsvTextBox.BackgroundStyle.Class = "RichTextBoxBorder";
-            this.LauncherFastFileCsvTextBox.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LauncherFastFileCsvTextBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LauncherFastFileCsvTextBox.Location = new System.Drawing.Point(7, 18);
-            this.LauncherFastFileCsvTextBox.Name = "LauncherFastFileCsvTextBox";
-            this.LauncherFastFileCsvTextBox.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 " +
-    "Segoe UI;}}\r\n{\\*\\generator Riched20 10.0.22621}\\viewkind4\\uc1 \r\n\\pard\\f0\\fs17\\pa" +
-    "r\r\n}\r\n";
-            this.LauncherFastFileCsvTextBox.Size = new System.Drawing.Size(326, 56);
-            this.LauncherFastFileCsvTextBox.TabIndex = 2;
-            this.LauncherFastFileCsvTextBox.WordWrap = false;
-            // 
-            // LauncherModGroupBox
-            // 
-            this.LauncherModGroupBox.BackColor = System.Drawing.Color.Transparent;
-            this.LauncherModGroupBox.Controls.Add(this.LauncherModLanguageLabel);
-            this.LauncherModGroupBox.Controls.Add(this.LauncherModLanguageComboBox);
-            this.LauncherModGroupBox.Controls.Add(this.LauncherModBuildLocalizedButton);
-            this.LauncherModGroupBox.Controls.Add(this.LauncherModRefreshButton);
-            this.LauncherModGroupBox.Controls.Add(this.LauncherModBuildButton);
-            this.LauncherModGroupBox.Controls.Add(this.LauncherModOpenButton);
-            this.LauncherModGroupBox.Controls.Add(this.LauncherModComboBox);
-            this.LauncherModGroupBox.Controls.Add(this.LauncherModBuildSoundsCheckBox);
-            this.LauncherModGroupBox.Controls.Add(this.LauncherModVerboseCheckBox);
-            this.LauncherModGroupBox.Controls.Add(this.LauncherModBuildIwdFileCheckBox);
-            this.LauncherModGroupBox.Controls.Add(this.LauncherModBuildFastFilesCheckBox);
-            this.LauncherModGroupBox.Location = new System.Drawing.Point(6, 6);
-            this.LauncherModGroupBox.Name = "LauncherModGroupBox";
-            this.LauncherModGroupBox.Size = new System.Drawing.Size(339, 188);
-            this.LauncherModGroupBox.TabIndex = 4;
-            this.LauncherModGroupBox.TabStop = false;
-            this.LauncherModGroupBox.Text = "Mod";
             // 
             // LauncherModLanguageLabel
             // 
@@ -1357,7 +1419,7 @@ namespace Form1
             // 
             // 
             this.LauncherModLanguageLabel.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.LauncherModLanguageLabel.Location = new System.Drawing.Point(6, 158);
+            this.LauncherModLanguageLabel.Location = new System.Drawing.Point(6, 30);
             this.LauncherModLanguageLabel.Name = "LauncherModLanguageLabel";
             this.LauncherModLanguageLabel.Size = new System.Drawing.Size(70, 20);
             this.LauncherModLanguageLabel.TabIndex = 23;
@@ -1380,9 +1442,9 @@ namespace Form1
             "russian",
             "korean",
             "polish"});
-            this.LauncherModLanguageComboBox.Location = new System.Drawing.Point(80, 157);
+            this.LauncherModLanguageComboBox.Location = new System.Drawing.Point(80, 31);
             this.LauncherModLanguageComboBox.Name = "LauncherModLanguageComboBox";
-            this.LauncherModLanguageComboBox.Size = new System.Drawing.Size(253, 20);
+            this.LauncherModLanguageComboBox.Size = new System.Drawing.Size(125, 20);
             this.LauncherModLanguageComboBox.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.LauncherModLanguageComboBox.TabIndex = 24;
             // 
@@ -1390,19 +1452,65 @@ namespace Form1
             // 
             this.LauncherModBuildLocalizedButton.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.LauncherModBuildLocalizedButton.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.LauncherModBuildLocalizedButton.Location = new System.Drawing.Point(6, 126);
+            this.LauncherModBuildLocalizedButton.Location = new System.Drawing.Point(6, 65);
             this.LauncherModBuildLocalizedButton.Name = "LauncherModBuildLocalizedButton";
-            this.LauncherModBuildLocalizedButton.Size = new System.Drawing.Size(327, 26);
+            this.LauncherModBuildLocalizedButton.Size = new System.Drawing.Size(200, 26);
             this.LauncherModBuildLocalizedButton.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.LauncherModBuildLocalizedButton.TabIndex = 22;
             this.LauncherModBuildLocalizedButton.Text = "Build Localized FF";
             this.LauncherModBuildLocalizedButton.Click += new System.EventHandler(this.LauncherModBuildLocalizedButton_Click);
             // 
+            // LauncherFastFileCsvGroupBox
+            // 
+            this.LauncherFastFileCsvGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.LauncherFastFileCsvGroupBox.Controls.Add(this.LauncherFastFileCsvTextBox);
+            this.LauncherFastFileCsvGroupBox.Location = new System.Drawing.Point(6, 143);
+            this.LauncherFastFileCsvGroupBox.Name = "LauncherFastFileCsvGroupBox";
+            this.LauncherFastFileCsvGroupBox.Size = new System.Drawing.Size(284, 204);
+            this.LauncherFastFileCsvGroupBox.TabIndex = 19;
+            this.LauncherFastFileCsvGroupBox.TabStop = false;
+            this.LauncherFastFileCsvGroupBox.Text = "FastFile mod.csv";
+            // 
+            // LauncherFastFileCsvTextBox
+            // 
+            // 
+            // 
+            // 
+            this.LauncherFastFileCsvTextBox.BackgroundStyle.Class = "RichTextBoxBorder";
+            this.LauncherFastFileCsvTextBox.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.LauncherFastFileCsvTextBox.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LauncherFastFileCsvTextBox.Location = new System.Drawing.Point(7, 18);
+            this.LauncherFastFileCsvTextBox.Name = "LauncherFastFileCsvTextBox";
+            this.LauncherFastFileCsvTextBox.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1033{\\fonttbl{\\f0\\fnil\\fcharset0 " +
+    "Segoe UI;}}\r\n{\\*\\generator Riched20 10.0.19041}\\viewkind4\\uc1 \r\n\\pard\\f0\\fs17\\pa" +
+    "r\r\n}\r\n";
+            this.LauncherFastFileCsvTextBox.Size = new System.Drawing.Size(275, 185);
+            this.LauncherFastFileCsvTextBox.TabIndex = 2;
+            this.LauncherFastFileCsvTextBox.WordWrap = false;
+            // 
+            // LauncherModGroupBox
+            // 
+            this.LauncherModGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.LauncherModGroupBox.Controls.Add(this.LauncherModRefreshButton);
+            this.LauncherModGroupBox.Controls.Add(this.LauncherModBuildButton);
+            this.LauncherModGroupBox.Controls.Add(this.LauncherModOpenButton);
+            this.LauncherModGroupBox.Controls.Add(this.LauncherModComboBox);
+            this.LauncherModGroupBox.Controls.Add(this.LauncherModBuildSoundsCheckBox);
+            this.LauncherModGroupBox.Controls.Add(this.LauncherModVerboseCheckBox);
+            this.LauncherModGroupBox.Controls.Add(this.LauncherModBuildIwdFileCheckBox);
+            this.LauncherModGroupBox.Controls.Add(this.LauncherModBuildFastFilesCheckBox);
+            this.LauncherModGroupBox.Location = new System.Drawing.Point(6, 6);
+            this.LauncherModGroupBox.Name = "LauncherModGroupBox";
+            this.LauncherModGroupBox.Size = new System.Drawing.Size(284, 131);
+            this.LauncherModGroupBox.TabIndex = 4;
+            this.LauncherModGroupBox.TabStop = false;
+            this.LauncherModGroupBox.Text = "Mod";
+            // 
             // LauncherModRefreshButton
             // 
             this.LauncherModRefreshButton.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.LauncherModRefreshButton.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.LauncherModRefreshButton.Location = new System.Drawing.Point(245, 94);
+            this.LauncherModRefreshButton.Location = new System.Drawing.Point(194, 94);
             this.LauncherModRefreshButton.Name = "LauncherModRefreshButton";
             this.LauncherModRefreshButton.Size = new System.Drawing.Size(88, 26);
             this.LauncherModRefreshButton.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -1426,7 +1534,7 @@ namespace Form1
             // 
             this.LauncherModOpenButton.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.LauncherModOpenButton.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.LauncherModOpenButton.Location = new System.Drawing.Point(126, 94);
+            this.LauncherModOpenButton.Location = new System.Drawing.Point(100, 94);
             this.LauncherModOpenButton.Name = "LauncherModOpenButton";
             this.LauncherModOpenButton.Size = new System.Drawing.Size(88, 26);
             this.LauncherModOpenButton.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -1444,7 +1552,7 @@ namespace Form1
             this.LauncherModComboBox.ItemHeight = 14;
             this.LauncherModComboBox.Location = new System.Drawing.Point(6, 19);
             this.LauncherModComboBox.Name = "LauncherModComboBox";
-            this.LauncherModComboBox.Size = new System.Drawing.Size(327, 20);
+            this.LauncherModComboBox.Size = new System.Drawing.Size(270, 20);
             this.LauncherModComboBox.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.LauncherModComboBox.TabIndex = 1;
             this.LauncherModComboBox.SelectedIndexChanged += new System.EventHandler(this.LauncherModComboBox_SelectedIndexChanged);
@@ -1455,7 +1563,7 @@ namespace Form1
             this.LauncherModBuildSoundsCheckBox.AutoSize = true;
             this.LauncherModBuildSoundsCheckBox.Location = new System.Drawing.Point(152, 45);
             this.LauncherModBuildSoundsCheckBox.Name = "LauncherModBuildSoundsCheckBox";
-            this.LauncherModBuildSoundsCheckBox.Size = new System.Drawing.Size(105, 20);
+            this.LauncherModBuildSoundsCheckBox.Size = new System.Drawing.Size(88, 17);
             this.LauncherModBuildSoundsCheckBox.TabIndex = 17;
             this.LauncherModBuildSoundsCheckBox.Text = "Build Sounds";
             this.LauncherModBuildSoundsCheckBox.UseVisualStyleBackColor = true;
@@ -1465,7 +1573,7 @@ namespace Form1
             this.LauncherModVerboseCheckBox.AutoSize = true;
             this.LauncherModVerboseCheckBox.Location = new System.Drawing.Point(152, 71);
             this.LauncherModVerboseCheckBox.Name = "LauncherModVerboseCheckBox";
-            this.LauncherModVerboseCheckBox.Size = new System.Drawing.Size(78, 20);
+            this.LauncherModVerboseCheckBox.Size = new System.Drawing.Size(65, 17);
             this.LauncherModVerboseCheckBox.TabIndex = 15;
             this.LauncherModVerboseCheckBox.Text = "Verbose";
             this.LauncherModVerboseCheckBox.UseVisualStyleBackColor = true;
@@ -1475,7 +1583,7 @@ namespace Form1
             this.LauncherModBuildIwdFileCheckBox.AutoSize = true;
             this.LauncherModBuildIwdFileCheckBox.Location = new System.Drawing.Point(7, 71);
             this.LauncherModBuildIwdFileCheckBox.Name = "LauncherModBuildIwdFileCheckBox";
-            this.LauncherModBuildIwdFileCheckBox.Size = new System.Drawing.Size(110, 20);
+            this.LauncherModBuildIwdFileCheckBox.Size = new System.Drawing.Size(93, 17);
             this.LauncherModBuildIwdFileCheckBox.TabIndex = 14;
             this.LauncherModBuildIwdFileCheckBox.Text = "Build IWD File";
             this.LauncherModBuildIwdFileCheckBox.UseVisualStyleBackColor = true;
@@ -1485,7 +1593,7 @@ namespace Form1
             this.LauncherModBuildFastFilesCheckBox.AutoSize = true;
             this.LauncherModBuildFastFilesCheckBox.Location = new System.Drawing.Point(7, 45);
             this.LauncherModBuildFastFilesCheckBox.Name = "LauncherModBuildFastFilesCheckBox";
-            this.LauncherModBuildFastFilesCheckBox.Size = new System.Drawing.Size(146, 20);
+            this.LauncherModBuildFastFilesCheckBox.Size = new System.Drawing.Size(120, 17);
             this.LauncherModBuildFastFilesCheckBox.TabIndex = 13;
             this.LauncherModBuildFastFilesCheckBox.Text = "Build mod.ff FastFile";
             this.LauncherModBuildFastFilesCheckBox.UseVisualStyleBackColor = true;
@@ -1510,10 +1618,10 @@ namespace Form1
             this.LauncherTabRunGame.Controls.Add(this.LauncherRunGameCommandLineGroupBox);
             this.LauncherTabRunGame.Controls.Add(this.LauncherRunGameModGroupBox);
             this.LauncherTabRunGame.Controls.Add(this.LauncherRunGameExeTypeGroupBox);
-            this.LauncherTabRunGame.Location = new System.Drawing.Point(4, 25);
+            this.LauncherTabRunGame.Location = new System.Drawing.Point(4, 22);
             this.LauncherTabRunGame.Name = "LauncherTabRunGame";
             this.LauncherTabRunGame.Padding = new System.Windows.Forms.Padding(3);
-            this.LauncherTabRunGame.Size = new System.Drawing.Size(763, 347);
+            this.LauncherTabRunGame.Size = new System.Drawing.Size(763, 350);
             this.LauncherTabRunGame.TabIndex = 2;
             this.LauncherTabRunGame.Text = "Run Game";
             // 
@@ -1541,7 +1649,7 @@ namespace Form1
             this.LauncherGameOptionsPanel.Location = new System.Drawing.Point(6, 59);
             this.LauncherGameOptionsPanel.Margin = new System.Windows.Forms.Padding(0);
             this.LauncherGameOptionsPanel.Name = "LauncherGameOptionsPanel";
-            this.LauncherGameOptionsPanel.Size = new System.Drawing.Size(751, 176);
+            this.LauncherGameOptionsPanel.Size = new System.Drawing.Size(751, 179);
             this.LauncherGameOptionsPanel.TabIndex = 5;
             this.LauncherGameOptionsPanel.Click += new System.EventHandler(this.LauncherGameOptionsFlowPanel_Click);
             // 
@@ -1550,7 +1658,7 @@ namespace Form1
             this.LauncherRunGameCustomCommandLineGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LauncherRunGameCustomCommandLineGroupBox.Controls.Add(this.LauncherRunGameCustomCommandLineTextBox);
-            this.LauncherRunGameCustomCommandLineGroupBox.Location = new System.Drawing.Point(6, 246);
+            this.LauncherRunGameCustomCommandLineGroupBox.Location = new System.Drawing.Point(6, 249);
             this.LauncherRunGameCustomCommandLineGroupBox.Name = "LauncherRunGameCustomCommandLineGroupBox";
             this.LauncherRunGameCustomCommandLineGroupBox.Size = new System.Drawing.Size(623, 44);
             this.LauncherRunGameCustomCommandLineGroupBox.TabIndex = 4;
@@ -1564,7 +1672,7 @@ namespace Form1
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LauncherRunGameCustomCommandLineTextBox.Location = new System.Drawing.Point(6, 19);
             this.LauncherRunGameCustomCommandLineTextBox.Name = "LauncherRunGameCustomCommandLineTextBox";
-            this.LauncherRunGameCustomCommandLineTextBox.Size = new System.Drawing.Size(611, 22);
+            this.LauncherRunGameCustomCommandLineTextBox.Size = new System.Drawing.Size(611, 20);
             this.LauncherRunGameCustomCommandLineTextBox.TabIndex = 0;
             // 
             // LauncherRunGameCommandLineGroupBox
@@ -1573,7 +1681,7 @@ namespace Form1
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LauncherRunGameCommandLineGroupBox.BackColor = System.Drawing.Color.Transparent;
             this.LauncherRunGameCommandLineGroupBox.Controls.Add(this.LauncherRunGameCommandLineTextBox);
-            this.LauncherRunGameCommandLineGroupBox.Location = new System.Drawing.Point(6, 297);
+            this.LauncherRunGameCommandLineGroupBox.Location = new System.Drawing.Point(6, 300);
             this.LauncherRunGameCommandLineGroupBox.Name = "LauncherRunGameCommandLineGroupBox";
             this.LauncherRunGameCommandLineGroupBox.Size = new System.Drawing.Size(623, 44);
             this.LauncherRunGameCommandLineGroupBox.TabIndex = 3;
@@ -1594,7 +1702,7 @@ namespace Form1
             this.LauncherRunGameCommandLineTextBox.Name = "LauncherRunGameCommandLineTextBox";
             this.LauncherRunGameCommandLineTextBox.PreventEnterBeep = true;
             this.LauncherRunGameCommandLineTextBox.ReadOnly = true;
-            this.LauncherRunGameCommandLineTextBox.Size = new System.Drawing.Size(565, 22);
+            this.LauncherRunGameCommandLineTextBox.Size = new System.Drawing.Size(565, 20);
             this.LauncherRunGameCommandLineTextBox.TabIndex = 5;
             // 
             // LauncherRunGameModGroupBox
@@ -1641,7 +1749,7 @@ namespace Form1
             this.LauncherRunGameExeTypeMpRadioButton.AutoSize = true;
             this.LauncherRunGameExeTypeMpRadioButton.Location = new System.Drawing.Point(50, 19);
             this.LauncherRunGameExeTypeMpRadioButton.Name = "LauncherRunGameExeTypeMpRadioButton";
-            this.LauncherRunGameExeTypeMpRadioButton.Size = new System.Drawing.Size(45, 20);
+            this.LauncherRunGameExeTypeMpRadioButton.Size = new System.Drawing.Size(41, 17);
             this.LauncherRunGameExeTypeMpRadioButton.TabIndex = 1;
             this.LauncherRunGameExeTypeMpRadioButton.Text = "MP";
             this.LauncherRunGameExeTypeMpRadioButton.UseVisualStyleBackColor = true;
@@ -1652,11 +1760,504 @@ namespace Form1
             this.LauncherRunGameTypeRadioButton.Checked = true;
             this.LauncherRunGameTypeRadioButton.Location = new System.Drawing.Point(6, 19);
             this.LauncherRunGameTypeRadioButton.Name = "LauncherRunGameTypeRadioButton";
-            this.LauncherRunGameTypeRadioButton.Size = new System.Drawing.Size(43, 20);
+            this.LauncherRunGameTypeRadioButton.Size = new System.Drawing.Size(39, 17);
             this.LauncherRunGameTypeRadioButton.TabIndex = 0;
             this.LauncherRunGameTypeRadioButton.TabStop = true;
             this.LauncherRunGameTypeRadioButton.Text = "SP";
             this.LauncherRunGameTypeRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // LauncherTabExplore
+            // 
+            this.LauncherTabExplore.BackColor = System.Drawing.Color.Transparent;
+            this.LauncherTabExplore.Controls.Add(this.LauncherExploreGroupBox);
+            this.LauncherTabExplore.Location = new System.Drawing.Point(4, 22);
+            this.LauncherTabExplore.Name = "LauncherTabExplore";
+            this.LauncherTabExplore.Padding = new System.Windows.Forms.Padding(3);
+            this.LauncherTabExplore.Size = new System.Drawing.Size(763, 350);
+            this.LauncherTabExplore.TabIndex = 0;
+            this.LauncherTabExplore.Text = "Explore";
+            // 
+            // LauncherExploreGroupBox
+            // 
+            this.LauncherExploreGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LauncherExploreGroupBox.Controls.Add(this.LauncherExploreLocalizationFolder);
+            this.LauncherExploreGroupBox.Controls.Add(this.LauncherExploreRawMapsDirGroupBox);
+            this.LauncherExploreGroupBox.Controls.Add(this.LauncherExploreRawDirGroupBox);
+            this.LauncherExploreGroupBox.Controls.Add(this.LauncherExploreDevDirGroupBox);
+            this.LauncherExploreGroupBox.Controls.Add(this.LauncherExploreBlopsDirGroupBox);
+            this.LauncherExploreGroupBox.Location = new System.Drawing.Point(7, 7);
+            this.LauncherExploreGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreGroupBox.Name = "LauncherExploreGroupBox";
+            this.LauncherExploreGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreGroupBox.Size = new System.Drawing.Size(734, 361);
+            this.LauncherExploreGroupBox.TabIndex = 0;
+            this.LauncherExploreGroupBox.TabStop = false;
+            this.LauncherExploreGroupBox.Text = "Explore";
+            // 
+            // LauncherExploreLocalizationFolder
+            // 
+            this.LauncherExploreLocalizationFolder.Controls.Add(this.LauncherExploreLocalizationPolish);
+            this.LauncherExploreLocalizationFolder.Controls.Add(this.LauncherExploreLocalizationKorean);
+            this.LauncherExploreLocalizationFolder.Controls.Add(this.LauncherExploreLocalizationRussian);
+            this.LauncherExploreLocalizationFolder.Controls.Add(this.LauncherExploreLocalizationGerman);
+            this.LauncherExploreLocalizationFolder.Controls.Add(this.LauncherExploreLocalizationItalian);
+            this.LauncherExploreLocalizationFolder.Controls.Add(this.LauncherExploreLocalizationFrench);
+            this.LauncherExploreLocalizationFolder.Controls.Add(this.LauncherExploreLocalizationSpanish);
+            this.LauncherExploreLocalizationFolder.Controls.Add(this.LauncherExploreLocalizationEnglish);
+            this.LauncherExploreLocalizationFolder.Location = new System.Drawing.Point(8, 161);
+            this.LauncherExploreLocalizationFolder.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreLocalizationFolder.Name = "LauncherExploreLocalizationFolder";
+            this.LauncherExploreLocalizationFolder.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreLocalizationFolder.Size = new System.Drawing.Size(180, 164);
+            this.LauncherExploreLocalizationFolder.TabIndex = 18;
+            this.LauncherExploreLocalizationFolder.TabStop = false;
+            this.LauncherExploreLocalizationFolder.Text = "Localization Folder";
+            // 
+            // LauncherExploreLocalizationPolish
+            // 
+            this.LauncherExploreLocalizationPolish.Location = new System.Drawing.Point(85, 123);
+            this.LauncherExploreLocalizationPolish.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreLocalizationPolish.Name = "LauncherExploreLocalizationPolish";
+            this.LauncherExploreLocalizationPolish.Size = new System.Drawing.Size(71, 28);
+            this.LauncherExploreLocalizationPolish.TabIndex = 15;
+            this.LauncherExploreLocalizationPolish.Text = "Polish";
+            this.LauncherExploreLocalizationPolish.UseVisualStyleBackColor = true;
+            this.LauncherExploreLocalizationPolish.Click += new System.EventHandler(this.LauncherExploreLocalizationPolishButton_Click);
+            // 
+            // LauncherExploreLocalizationKorean
+            // 
+            this.LauncherExploreLocalizationKorean.Location = new System.Drawing.Point(85, 89);
+            this.LauncherExploreLocalizationKorean.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreLocalizationKorean.Name = "LauncherExploreLocalizationKorean";
+            this.LauncherExploreLocalizationKorean.Size = new System.Drawing.Size(71, 28);
+            this.LauncherExploreLocalizationKorean.TabIndex = 14;
+            this.LauncherExploreLocalizationKorean.Text = "Korean";
+            this.LauncherExploreLocalizationKorean.UseVisualStyleBackColor = true;
+            this.LauncherExploreLocalizationKorean.Click += new System.EventHandler(this.LauncherExploreLocalizationKoreanButton_Click);
+            // 
+            // LauncherExploreLocalizationRussian
+            // 
+            this.LauncherExploreLocalizationRussian.Location = new System.Drawing.Point(7, 123);
+            this.LauncherExploreLocalizationRussian.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreLocalizationRussian.Name = "LauncherExploreLocalizationRussian";
+            this.LauncherExploreLocalizationRussian.Size = new System.Drawing.Size(71, 28);
+            this.LauncherExploreLocalizationRussian.TabIndex = 13;
+            this.LauncherExploreLocalizationRussian.Text = "Russian";
+            this.LauncherExploreLocalizationRussian.UseVisualStyleBackColor = true;
+            this.LauncherExploreLocalizationRussian.Click += new System.EventHandler(this.LauncherExploreLocalizationRussianButton_Click);
+            // 
+            // LauncherExploreLocalizationGerman
+            // 
+            this.LauncherExploreLocalizationGerman.Location = new System.Drawing.Point(8, 89);
+            this.LauncherExploreLocalizationGerman.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreLocalizationGerman.Name = "LauncherExploreLocalizationGerman";
+            this.LauncherExploreLocalizationGerman.Size = new System.Drawing.Size(71, 28);
+            this.LauncherExploreLocalizationGerman.TabIndex = 12;
+            this.LauncherExploreLocalizationGerman.Text = "German";
+            this.LauncherExploreLocalizationGerman.UseVisualStyleBackColor = true;
+            this.LauncherExploreLocalizationGerman.Click += new System.EventHandler(this.LauncherExploreLocalizationGermanButton_Click);
+            // 
+            // LauncherExploreLocalizationItalian
+            // 
+            this.LauncherExploreLocalizationItalian.Location = new System.Drawing.Point(85, 56);
+            this.LauncherExploreLocalizationItalian.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreLocalizationItalian.Name = "LauncherExploreLocalizationItalian";
+            this.LauncherExploreLocalizationItalian.Size = new System.Drawing.Size(71, 28);
+            this.LauncherExploreLocalizationItalian.TabIndex = 11;
+            this.LauncherExploreLocalizationItalian.Text = "Italian";
+            this.LauncherExploreLocalizationItalian.UseVisualStyleBackColor = true;
+            this.LauncherExploreLocalizationItalian.Click += new System.EventHandler(this.LauncherExploreLocalizationItalianButton_Click);
+            // 
+            // LauncherExploreLocalizationFrench
+            // 
+            this.LauncherExploreLocalizationFrench.Location = new System.Drawing.Point(85, 22);
+            this.LauncherExploreLocalizationFrench.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreLocalizationFrench.Name = "LauncherExploreLocalizationFrench";
+            this.LauncherExploreLocalizationFrench.Size = new System.Drawing.Size(71, 28);
+            this.LauncherExploreLocalizationFrench.TabIndex = 10;
+            this.LauncherExploreLocalizationFrench.Text = "French";
+            this.LauncherExploreLocalizationFrench.UseVisualStyleBackColor = true;
+            this.LauncherExploreLocalizationFrench.Click += new System.EventHandler(this.LauncherExploreLocalizationFrenchButton_Click);
+            // 
+            // LauncherExploreLocalizationSpanish
+            // 
+            this.LauncherExploreLocalizationSpanish.Location = new System.Drawing.Point(7, 56);
+            this.LauncherExploreLocalizationSpanish.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreLocalizationSpanish.Name = "LauncherExploreLocalizationSpanish";
+            this.LauncherExploreLocalizationSpanish.Size = new System.Drawing.Size(70, 28);
+            this.LauncherExploreLocalizationSpanish.TabIndex = 9;
+            this.LauncherExploreLocalizationSpanish.Text = "Spanish";
+            this.LauncherExploreLocalizationSpanish.UseVisualStyleBackColor = true;
+            this.LauncherExploreLocalizationSpanish.Click += new System.EventHandler(this.LauncherExploreLocalizationSpanishButton_Click);
+            // 
+            // LauncherExploreLocalizationEnglish
+            // 
+            this.LauncherExploreLocalizationEnglish.Location = new System.Drawing.Point(7, 22);
+            this.LauncherExploreLocalizationEnglish.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreLocalizationEnglish.Name = "LauncherExploreLocalizationEnglish";
+            this.LauncherExploreLocalizationEnglish.Size = new System.Drawing.Size(70, 28);
+            this.LauncherExploreLocalizationEnglish.TabIndex = 8;
+            this.LauncherExploreLocalizationEnglish.Text = "English";
+            this.LauncherExploreLocalizationEnglish.UseVisualStyleBackColor = true;
+            this.LauncherExploreLocalizationEnglish.Click += new System.EventHandler(this.LauncherExploreLocalizationEnglishButton_Click);
+            // 
+            // LauncherExploreRawMapsDirGroupBox
+            // 
+            this.LauncherExploreRawMapsDirGroupBox.Controls.Add(this.LauncherExploreRawGSCDirMPGametypesButton);
+            this.LauncherExploreRawMapsDirGroupBox.Controls.Add(this.LauncherExploreRawGSCDirMPFXButton);
+            this.LauncherExploreRawMapsDirGroupBox.Controls.Add(this.LauncherExploreRawGSCDirMPArtButton);
+            this.LauncherExploreRawMapsDirGroupBox.Controls.Add(this.LauncherExploreRawGSCDirMPButton);
+            this.LauncherExploreRawMapsDirGroupBox.Controls.Add(this.LauncherExploreRawGSCDirSPVoiceButton);
+            this.LauncherExploreRawMapsDirGroupBox.Controls.Add(this.LauncherExploreRawGSCDirSPGametypesButton);
+            this.LauncherExploreRawMapsDirGroupBox.Controls.Add(this.LauncherExploreRawGSCDirSPFXButton);
+            this.LauncherExploreRawMapsDirGroupBox.Controls.Add(this.LauncherExploreRawGSCDirSPArtButton);
+            this.LauncherExploreRawMapsDirGroupBox.Controls.Add(this.LauncherExploreRawGSCDirSPButton);
+            this.LauncherExploreRawMapsDirGroupBox.Location = new System.Drawing.Point(540, 22);
+            this.LauncherExploreRawMapsDirGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreRawMapsDirGroupBox.Name = "LauncherExploreRawMapsDirGroupBox";
+            this.LauncherExploreRawMapsDirGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreRawMapsDirGroupBox.Size = new System.Drawing.Size(166, 303);
+            this.LauncherExploreRawMapsDirGroupBox.TabIndex = 20;
+            this.LauncherExploreRawMapsDirGroupBox.TabStop = false;
+            this.LauncherExploreRawMapsDirGroupBox.Text = "Raw Maps Folders";
+            // 
+            // LauncherExploreRawGSCDirMPGametypesButton
+            // 
+            this.LauncherExploreRawGSCDirMPGametypesButton.Location = new System.Drawing.Point(7, 228);
+            this.LauncherExploreRawGSCDirMPGametypesButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreRawGSCDirMPGametypesButton.Name = "LauncherExploreRawGSCDirMPGametypesButton";
+            this.LauncherExploreRawGSCDirMPGametypesButton.Size = new System.Drawing.Size(75, 28);
+            this.LauncherExploreRawGSCDirMPGametypesButton.TabIndex = 29;
+            this.LauncherExploreRawGSCDirMPGametypesButton.Text = "Gametypes";
+            this.LauncherExploreRawGSCDirMPGametypesButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreRawGSCDirMPGametypesButton.Click += new System.EventHandler(this.LauncherExploreRawGSCDirMPGametypesButton_Click);
+            // 
+            // LauncherExploreRawGSCDirMPFXButton
+            // 
+            this.LauncherExploreRawGSCDirMPFXButton.Location = new System.Drawing.Point(84, 194);
+            this.LauncherExploreRawGSCDirMPFXButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreRawGSCDirMPFXButton.Name = "LauncherExploreRawGSCDirMPFXButton";
+            this.LauncherExploreRawGSCDirMPFXButton.Size = new System.Drawing.Size(75, 28);
+            this.LauncherExploreRawGSCDirMPFXButton.TabIndex = 28;
+            this.LauncherExploreRawGSCDirMPFXButton.Text = "CreateFX";
+            this.LauncherExploreRawGSCDirMPFXButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreRawGSCDirMPFXButton.Click += new System.EventHandler(this.LauncherExploreRawGSCDirMPFXButton_Click);
+            // 
+            // LauncherExploreRawGSCDirMPArtButton
+            // 
+            this.LauncherExploreRawGSCDirMPArtButton.Location = new System.Drawing.Point(7, 194);
+            this.LauncherExploreRawGSCDirMPArtButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreRawGSCDirMPArtButton.Name = "LauncherExploreRawGSCDirMPArtButton";
+            this.LauncherExploreRawGSCDirMPArtButton.Size = new System.Drawing.Size(75, 28);
+            this.LauncherExploreRawGSCDirMPArtButton.TabIndex = 27;
+            this.LauncherExploreRawGSCDirMPArtButton.Text = "CreateArt";
+            this.LauncherExploreRawGSCDirMPArtButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreRawGSCDirMPArtButton.Click += new System.EventHandler(this.LauncherExploreRawGSCDirMPArtButton_Click);
+            // 
+            // LauncherExploreRawGSCDirMPButton
+            // 
+            this.LauncherExploreRawGSCDirMPButton.Location = new System.Drawing.Point(7, 159);
+            this.LauncherExploreRawGSCDirMPButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreRawGSCDirMPButton.Name = "LauncherExploreRawGSCDirMPButton";
+            this.LauncherExploreRawGSCDirMPButton.Size = new System.Drawing.Size(149, 28);
+            this.LauncherExploreRawGSCDirMPButton.TabIndex = 26;
+            this.LauncherExploreRawGSCDirMPButton.Text = "Multiplayer";
+            this.LauncherExploreRawGSCDirMPButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreRawGSCDirMPButton.Click += new System.EventHandler(this.LauncherExploreRawGSCDirMPButton_Click);
+            // 
+            // LauncherExploreRawGSCDirSPVoiceButton
+            // 
+            this.LauncherExploreRawGSCDirSPVoiceButton.Location = new System.Drawing.Point(84, 91);
+            this.LauncherExploreRawGSCDirSPVoiceButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreRawGSCDirSPVoiceButton.Name = "LauncherExploreRawGSCDirSPVoiceButton";
+            this.LauncherExploreRawGSCDirSPVoiceButton.Size = new System.Drawing.Size(75, 28);
+            this.LauncherExploreRawGSCDirSPVoiceButton.TabIndex = 25;
+            this.LauncherExploreRawGSCDirSPVoiceButton.Text = "Voice";
+            this.LauncherExploreRawGSCDirSPVoiceButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreRawGSCDirSPVoiceButton.Click += new System.EventHandler(this.LauncherExploreRawGSCDirSPVoiceButton_Click);
+            // 
+            // LauncherExploreRawGSCDirSPGametypesButton
+            // 
+            this.LauncherExploreRawGSCDirSPGametypesButton.Location = new System.Drawing.Point(7, 91);
+            this.LauncherExploreRawGSCDirSPGametypesButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreRawGSCDirSPGametypesButton.Name = "LauncherExploreRawGSCDirSPGametypesButton";
+            this.LauncherExploreRawGSCDirSPGametypesButton.Size = new System.Drawing.Size(75, 28);
+            this.LauncherExploreRawGSCDirSPGametypesButton.TabIndex = 24;
+            this.LauncherExploreRawGSCDirSPGametypesButton.Text = "Gametypes";
+            this.LauncherExploreRawGSCDirSPGametypesButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreRawGSCDirSPGametypesButton.Click += new System.EventHandler(this.LauncherExploreRawGSCDirSPGametypesButton_Click);
+            // 
+            // LauncherExploreRawGSCDirSPFXButton
+            // 
+            this.LauncherExploreRawGSCDirSPFXButton.Location = new System.Drawing.Point(84, 57);
+            this.LauncherExploreRawGSCDirSPFXButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreRawGSCDirSPFXButton.Name = "LauncherExploreRawGSCDirSPFXButton";
+            this.LauncherExploreRawGSCDirSPFXButton.Size = new System.Drawing.Size(75, 28);
+            this.LauncherExploreRawGSCDirSPFXButton.TabIndex = 23;
+            this.LauncherExploreRawGSCDirSPFXButton.Text = "CreateFX";
+            this.LauncherExploreRawGSCDirSPFXButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreRawGSCDirSPFXButton.Click += new System.EventHandler(this.LauncherExploreRawGSCDirSPFXButton_Click);
+            // 
+            // LauncherExploreRawGSCDirSPArtButton
+            // 
+            this.LauncherExploreRawGSCDirSPArtButton.Location = new System.Drawing.Point(7, 57);
+            this.LauncherExploreRawGSCDirSPArtButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreRawGSCDirSPArtButton.Name = "LauncherExploreRawGSCDirSPArtButton";
+            this.LauncherExploreRawGSCDirSPArtButton.Size = new System.Drawing.Size(75, 28);
+            this.LauncherExploreRawGSCDirSPArtButton.TabIndex = 22;
+            this.LauncherExploreRawGSCDirSPArtButton.Text = "CreateArt";
+            this.LauncherExploreRawGSCDirSPArtButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreRawGSCDirSPArtButton.Click += new System.EventHandler(this.LauncherExploreRawGSCDirSPArtButton_Click);
+            // 
+            // LauncherExploreRawGSCDirSPButton
+            // 
+            this.LauncherExploreRawGSCDirSPButton.Location = new System.Drawing.Point(7, 22);
+            this.LauncherExploreRawGSCDirSPButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreRawGSCDirSPButton.Name = "LauncherExploreRawGSCDirSPButton";
+            this.LauncherExploreRawGSCDirSPButton.Size = new System.Drawing.Size(149, 28);
+            this.LauncherExploreRawGSCDirSPButton.TabIndex = 21;
+            this.LauncherExploreRawGSCDirSPButton.Text = "Singleplayer";
+            this.LauncherExploreRawGSCDirSPButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreRawGSCDirSPButton.Click += new System.EventHandler(this.LauncherExploreRawGSCDirSPButton_Click);
+            // 
+            // LauncherExploreRawDirGroupBox
+            // 
+            this.LauncherExploreRawDirGroupBox.Controls.Add(this.LauncherExploreRawDirMPButton);
+            this.LauncherExploreRawDirGroupBox.Controls.Add(this.LauncherExploreRawDirWeaponsButton);
+            this.LauncherExploreRawDirGroupBox.Controls.Add(this.LauncherExploreRawDirVisionButton);
+            this.LauncherExploreRawDirGroupBox.Controls.Add(this.LauncherExploreRawDirAnimTreesButton);
+            this.LauncherExploreRawDirGroupBox.Controls.Add(this.LauncherExploreRawDirSoundAliasesButton);
+            this.LauncherExploreRawDirGroupBox.Controls.Add(this.LauncherExploreRawDirCSCButton);
+            this.LauncherExploreRawDirGroupBox.Controls.Add(this.LauncherExploreRawDirGSCButton);
+            this.LauncherExploreRawDirGroupBox.Location = new System.Drawing.Point(368, 22);
+            this.LauncherExploreRawDirGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreRawDirGroupBox.Name = "LauncherExploreRawDirGroupBox";
+            this.LauncherExploreRawDirGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreRawDirGroupBox.Size = new System.Drawing.Size(166, 303);
+            this.LauncherExploreRawDirGroupBox.TabIndex = 19;
+            this.LauncherExploreRawDirGroupBox.TabStop = false;
+            this.LauncherExploreRawDirGroupBox.Text = "Raw Folders";
+            // 
+            // LauncherExploreRawDirMPButton
+            // 
+            this.LauncherExploreRawDirMPButton.Location = new System.Drawing.Point(7, 125);
+            this.LauncherExploreRawDirMPButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreRawDirMPButton.Name = "LauncherExploreRawDirMPButton";
+            this.LauncherExploreRawDirMPButton.Size = new System.Drawing.Size(149, 28);
+            this.LauncherExploreRawDirMPButton.TabIndex = 24;
+            this.LauncherExploreRawDirMPButton.Text = "MP";
+            this.LauncherExploreRawDirMPButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreRawDirMPButton.Click += new System.EventHandler(this.LauncherExploreRawDirMPButton_Click);
+            // 
+            // LauncherExploreRawDirWeaponsButton
+            // 
+            this.LauncherExploreRawDirWeaponsButton.Location = new System.Drawing.Point(7, 228);
+            this.LauncherExploreRawDirWeaponsButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreRawDirWeaponsButton.Name = "LauncherExploreRawDirWeaponsButton";
+            this.LauncherExploreRawDirWeaponsButton.Size = new System.Drawing.Size(149, 28);
+            this.LauncherExploreRawDirWeaponsButton.TabIndex = 23;
+            this.LauncherExploreRawDirWeaponsButton.Text = "Weapons";
+            this.LauncherExploreRawDirWeaponsButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreRawDirWeaponsButton.Click += new System.EventHandler(this.LauncherExploreRawDirWeaponsButton_Click);
+            // 
+            // LauncherExploreRawDirVisionButton
+            // 
+            this.LauncherExploreRawDirVisionButton.Location = new System.Drawing.Point(8, 193);
+            this.LauncherExploreRawDirVisionButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreRawDirVisionButton.Name = "LauncherExploreRawDirVisionButton";
+            this.LauncherExploreRawDirVisionButton.Size = new System.Drawing.Size(149, 28);
+            this.LauncherExploreRawDirVisionButton.TabIndex = 22;
+            this.LauncherExploreRawDirVisionButton.Text = "Vision";
+            this.LauncherExploreRawDirVisionButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreRawDirVisionButton.Click += new System.EventHandler(this.LauncherExploreRawDirVisionButton_Click);
+            // 
+            // LauncherExploreRawDirAnimTreesButton
+            // 
+            this.LauncherExploreRawDirAnimTreesButton.Location = new System.Drawing.Point(7, 22);
+            this.LauncherExploreRawDirAnimTreesButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreRawDirAnimTreesButton.Name = "LauncherExploreRawDirAnimTreesButton";
+            this.LauncherExploreRawDirAnimTreesButton.Size = new System.Drawing.Size(149, 28);
+            this.LauncherExploreRawDirAnimTreesButton.TabIndex = 20;
+            this.LauncherExploreRawDirAnimTreesButton.Text = "AnimTrees";
+            this.LauncherExploreRawDirAnimTreesButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreRawDirAnimTreesButton.Click += new System.EventHandler(this.LauncherExploreRawDirAnimTreesButton_Click);
+            // 
+            // LauncherExploreRawDirSoundAliasesButton
+            // 
+            this.LauncherExploreRawDirSoundAliasesButton.Location = new System.Drawing.Point(7, 159);
+            this.LauncherExploreRawDirSoundAliasesButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreRawDirSoundAliasesButton.Name = "LauncherExploreRawDirSoundAliasesButton";
+            this.LauncherExploreRawDirSoundAliasesButton.Size = new System.Drawing.Size(149, 28);
+            this.LauncherExploreRawDirSoundAliasesButton.TabIndex = 19;
+            this.LauncherExploreRawDirSoundAliasesButton.Text = "Sound Aliases";
+            this.LauncherExploreRawDirSoundAliasesButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreRawDirSoundAliasesButton.Click += new System.EventHandler(this.LauncherExploreRawDirSoundAliasesButton_Click);
+            // 
+            // LauncherExploreRawDirCSCButton
+            // 
+            this.LauncherExploreRawDirCSCButton.Location = new System.Drawing.Point(7, 57);
+            this.LauncherExploreRawDirCSCButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreRawDirCSCButton.Name = "LauncherExploreRawDirCSCButton";
+            this.LauncherExploreRawDirCSCButton.Size = new System.Drawing.Size(149, 28);
+            this.LauncherExploreRawDirCSCButton.TabIndex = 18;
+            this.LauncherExploreRawDirCSCButton.Text = "Clientscripts";
+            this.LauncherExploreRawDirCSCButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreRawDirCSCButton.Click += new System.EventHandler(this.LauncherExploreRawDirCSCButton_Click);
+            // 
+            // LauncherExploreRawDirGSCButton
+            // 
+            this.LauncherExploreRawDirGSCButton.Location = new System.Drawing.Point(7, 91);
+            this.LauncherExploreRawDirGSCButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreRawDirGSCButton.Name = "LauncherExploreRawDirGSCButton";
+            this.LauncherExploreRawDirGSCButton.Size = new System.Drawing.Size(149, 28);
+            this.LauncherExploreRawDirGSCButton.TabIndex = 17;
+            this.LauncherExploreRawDirGSCButton.Text = "Maps";
+            this.LauncherExploreRawDirGSCButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreRawDirGSCButton.Click += new System.EventHandler(this.LauncherExploreRawDirGSCButton_Click);
+            // 
+            // LauncherExploreDevDirGroupBox
+            // 
+            this.LauncherExploreDevDirGroupBox.Controls.Add(this.LauncherExploreDevDirRawButton);
+            this.LauncherExploreDevDirGroupBox.Controls.Add(this.LauncherExploreDevDirModelExportButton);
+            this.LauncherExploreDevDirGroupBox.Controls.Add(this.LauncherExploreDevDirTextureAssetsButton);
+            this.LauncherExploreDevDirGroupBox.Controls.Add(this.LauncherExploreDevDirSrcDataButton);
+            this.LauncherExploreDevDirGroupBox.Controls.Add(this.LauncherExploreDevDirMapSrcButton);
+            this.LauncherExploreDevDirGroupBox.Controls.Add(this.LauncherExploreDevDirBinButton);
+            this.LauncherExploreDevDirGroupBox.Controls.Add(this.LauncherExploreDevDirZoneSourceButton);
+            this.LauncherExploreDevDirGroupBox.Location = new System.Drawing.Point(195, 22);
+            this.LauncherExploreDevDirGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreDevDirGroupBox.Name = "LauncherExploreDevDirGroupBox";
+            this.LauncherExploreDevDirGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreDevDirGroupBox.Size = new System.Drawing.Size(166, 303);
+            this.LauncherExploreDevDirGroupBox.TabIndex = 18;
+            this.LauncherExploreDevDirGroupBox.TabStop = false;
+            this.LauncherExploreDevDirGroupBox.Text = "Development Directories";
+            // 
+            // LauncherExploreDevDirRawButton
+            // 
+            this.LauncherExploreDevDirRawButton.Location = new System.Drawing.Point(7, 125);
+            this.LauncherExploreDevDirRawButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreDevDirRawButton.Name = "LauncherExploreDevDirRawButton";
+            this.LauncherExploreDevDirRawButton.Size = new System.Drawing.Size(149, 28);
+            this.LauncherExploreDevDirRawButton.TabIndex = 19;
+            this.LauncherExploreDevDirRawButton.Text = "Raw";
+            this.LauncherExploreDevDirRawButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreDevDirRawButton.Click += new System.EventHandler(this.LauncherExploreDevDirRawButton_Click);
+            // 
+            // LauncherExploreDevDirModelExportButton
+            // 
+            this.LauncherExploreDevDirModelExportButton.Location = new System.Drawing.Point(7, 90);
+            this.LauncherExploreDevDirModelExportButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreDevDirModelExportButton.Name = "LauncherExploreDevDirModelExportButton";
+            this.LauncherExploreDevDirModelExportButton.Size = new System.Drawing.Size(149, 28);
+            this.LauncherExploreDevDirModelExportButton.TabIndex = 18;
+            this.LauncherExploreDevDirModelExportButton.Text = "Model Export";
+            this.LauncherExploreDevDirModelExportButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreDevDirModelExportButton.Click += new System.EventHandler(this.LauncherExploreDevDirModelExportButton_Click);
+            // 
+            // LauncherExploreDevDirTextureAssetsButton
+            // 
+            this.LauncherExploreDevDirTextureAssetsButton.Location = new System.Drawing.Point(7, 194);
+            this.LauncherExploreDevDirTextureAssetsButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreDevDirTextureAssetsButton.Name = "LauncherExploreDevDirTextureAssetsButton";
+            this.LauncherExploreDevDirTextureAssetsButton.Size = new System.Drawing.Size(149, 28);
+            this.LauncherExploreDevDirTextureAssetsButton.TabIndex = 17;
+            this.LauncherExploreDevDirTextureAssetsButton.Text = "Texture Assets";
+            this.LauncherExploreDevDirTextureAssetsButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreDevDirTextureAssetsButton.Click += new System.EventHandler(this.LauncherExploreDevDirTextureAssetsButton_Click);
+            // 
+            // LauncherExploreDevDirSrcDataButton
+            // 
+            this.LauncherExploreDevDirSrcDataButton.Location = new System.Drawing.Point(7, 159);
+            this.LauncherExploreDevDirSrcDataButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreDevDirSrcDataButton.Name = "LauncherExploreDevDirSrcDataButton";
+            this.LauncherExploreDevDirSrcDataButton.Size = new System.Drawing.Size(149, 28);
+            this.LauncherExploreDevDirSrcDataButton.TabIndex = 16;
+            this.LauncherExploreDevDirSrcDataButton.Text = "Source Data";
+            this.LauncherExploreDevDirSrcDataButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreDevDirSrcDataButton.Click += new System.EventHandler(this.LauncherExploreDevDirSrcDataButton_Click);
+            // 
+            // LauncherExploreDevDirMapSrcButton
+            // 
+            this.LauncherExploreDevDirMapSrcButton.Location = new System.Drawing.Point(7, 55);
+            this.LauncherExploreDevDirMapSrcButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreDevDirMapSrcButton.Name = "LauncherExploreDevDirMapSrcButton";
+            this.LauncherExploreDevDirMapSrcButton.Size = new System.Drawing.Size(149, 28);
+            this.LauncherExploreDevDirMapSrcButton.TabIndex = 15;
+            this.LauncherExploreDevDirMapSrcButton.Text = "Map Source";
+            this.LauncherExploreDevDirMapSrcButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreDevDirMapSrcButton.Click += new System.EventHandler(this.LauncherExploreDevDirMapSrcButton_Click);
+            // 
+            // LauncherExploreDevDirBinButton
+            // 
+            this.LauncherExploreDevDirBinButton.Location = new System.Drawing.Point(7, 22);
+            this.LauncherExploreDevDirBinButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreDevDirBinButton.Name = "LauncherExploreDevDirBinButton";
+            this.LauncherExploreDevDirBinButton.Size = new System.Drawing.Size(149, 28);
+            this.LauncherExploreDevDirBinButton.TabIndex = 14;
+            this.LauncherExploreDevDirBinButton.Text = "Bin";
+            this.LauncherExploreDevDirBinButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreDevDirBinButton.Click += new System.EventHandler(this.LauncherExploreDevDirBinButton_Click);
+            // 
+            // LauncherExploreDevDirZoneSourceButton
+            // 
+            this.LauncherExploreDevDirZoneSourceButton.Location = new System.Drawing.Point(7, 228);
+            this.LauncherExploreDevDirZoneSourceButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreDevDirZoneSourceButton.Name = "LauncherExploreDevDirZoneSourceButton";
+            this.LauncherExploreDevDirZoneSourceButton.Size = new System.Drawing.Size(149, 28);
+            this.LauncherExploreDevDirZoneSourceButton.TabIndex = 13;
+            this.LauncherExploreDevDirZoneSourceButton.Text = "Zone Source";
+            this.LauncherExploreDevDirZoneSourceButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreDevDirZoneSourceButton.Click += new System.EventHandler(this.LauncherExploreDevDirZoneSourceButton_Click);
+            // 
+            // LauncherExploreBlopsDirGroupBox
+            // 
+            this.LauncherExploreBlopsDirGroupBox.Controls.Add(this.LauncherExploreBlopsDirConfigsButton);
+            this.LauncherExploreBlopsDirGroupBox.Controls.Add(this.LauncherExploreBlopsDirModsButton);
+            this.LauncherExploreBlopsDirGroupBox.Controls.Add(this.LauncherExploreBlopsDirGameButton);
+            this.LauncherExploreBlopsDirGroupBox.Location = new System.Drawing.Point(8, 22);
+            this.LauncherExploreBlopsDirGroupBox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreBlopsDirGroupBox.Name = "LauncherExploreBlopsDirGroupBox";
+            this.LauncherExploreBlopsDirGroupBox.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreBlopsDirGroupBox.Size = new System.Drawing.Size(180, 133);
+            this.LauncherExploreBlopsDirGroupBox.TabIndex = 17;
+            this.LauncherExploreBlopsDirGroupBox.TabStop = false;
+            this.LauncherExploreBlopsDirGroupBox.Text = "Call of Duty: World at War";
+            // 
+            // LauncherExploreBlopsDirConfigsButton
+            // 
+            this.LauncherExploreBlopsDirConfigsButton.Location = new System.Drawing.Point(7, 57);
+            this.LauncherExploreBlopsDirConfigsButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreBlopsDirConfigsButton.Name = "LauncherExploreBlopsDirConfigsButton";
+            this.LauncherExploreBlopsDirConfigsButton.Size = new System.Drawing.Size(149, 28);
+            this.LauncherExploreBlopsDirConfigsButton.TabIndex = 10;
+            this.LauncherExploreBlopsDirConfigsButton.Text = "Player Configs";
+            this.LauncherExploreBlopsDirConfigsButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreBlopsDirConfigsButton.Click += new System.EventHandler(LauncherExploreBlopsDirConfigsButton_Click);
+            // 
+            // LauncherExploreBlopsDirModsButton
+            // 
+            this.LauncherExploreBlopsDirModsButton.Location = new System.Drawing.Point(7, 91);
+            this.LauncherExploreBlopsDirModsButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreBlopsDirModsButton.Name = "LauncherExploreBlopsDirModsButton";
+            this.LauncherExploreBlopsDirModsButton.Size = new System.Drawing.Size(149, 28);
+            this.LauncherExploreBlopsDirModsButton.TabIndex = 9;
+            this.LauncherExploreBlopsDirModsButton.Text = "Mods Folder";
+            this.LauncherExploreBlopsDirModsButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreBlopsDirModsButton.Click += new System.EventHandler(LauncherExploreBlopsDirModsButton_Click);
+            // 
+            // LauncherExploreBlopsDirGameButton
+            // 
+            this.LauncherExploreBlopsDirGameButton.Location = new System.Drawing.Point(7, 22);
+            this.LauncherExploreBlopsDirGameButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.LauncherExploreBlopsDirGameButton.Name = "LauncherExploreBlopsDirGameButton";
+            this.LauncherExploreBlopsDirGameButton.Size = new System.Drawing.Size(149, 28);
+            this.LauncherExploreBlopsDirGameButton.TabIndex = 8;
+            this.LauncherExploreBlopsDirGameButton.Text = "Game Directory";
+            this.LauncherExploreBlopsDirGameButton.UseVisualStyleBackColor = true;
+            this.LauncherExploreBlopsDirGameButton.Click += new System.EventHandler(LauncherExploreBlopsDirGameButton_Click);
             // 
             // LauncherApplicationsGroupBox
             // 
@@ -1826,9 +2427,9 @@ namespace Form1
             this.LauncherSaveConsoleButton.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.LauncherSaveConsoleButton.ImageFixedSize = new System.Drawing.Size(15, 15);
             this.LauncherSaveConsoleButton.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
-            this.LauncherSaveConsoleButton.Location = new System.Drawing.Point(836, 257);
+            this.LauncherSaveConsoleButton.Location = new System.Drawing.Point(877, 284);
             this.LauncherSaveConsoleButton.Name = "LauncherSaveConsoleButton";
-            this.LauncherSaveConsoleButton.Size = new System.Drawing.Size(38, 20);
+            this.LauncherSaveConsoleButton.Size = new System.Drawing.Size(38, 22);
             this.LauncherSaveConsoleButton.StopPulseOnMouseOver = false;
             this.LauncherSaveConsoleButton.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.LauncherSaveConsoleButton.TabIndex = 6;
@@ -1853,7 +2454,7 @@ namespace Form1
             this.LauncherConsole.Name = "LauncherConsole";
             this.LauncherConsole.ReadOnly = true;
             this.LauncherConsole.Rtf = "{\\rtf1\\ansi\\ansicpg1252\\deff0\\nouicompat\\deflang1036{\\fonttbl{\\f0\\fnil\\fcharset0 " +
-    "Microsoft Sans Serif;}}\r\n{\\*\\generator Riched20 10.0.22621}\\viewkind4\\uc1 \r\n\\par" +
+    "Microsoft Sans Serif;}}\r\n{\\*\\generator Riched20 10.0.19041}\\viewkind4\\uc1 \r\n\\par" +
     "d\\b\\f0\\fs18\\par\r\n}\r\n";
             this.LauncherConsole.Size = new System.Drawing.Size(765, 275);
             this.LauncherConsole.TabIndex = 5;
@@ -1899,6 +2500,13 @@ namespace Form1
             this.LauncherRunGameModGroupBox.ResumeLayout(false);
             this.LauncherRunGameExeTypeGroupBox.ResumeLayout(false);
             this.LauncherRunGameExeTypeGroupBox.PerformLayout();
+            this.LauncherTabExplore.ResumeLayout(false);
+            this.LauncherExploreGroupBox.ResumeLayout(false);
+            this.LauncherExploreLocalizationFolder.ResumeLayout(false);
+            this.LauncherExploreRawMapsDirGroupBox.ResumeLayout(false);
+            this.LauncherExploreRawDirGroupBox.ResumeLayout(false);
+            this.LauncherExploreDevDirGroupBox.ResumeLayout(false);
+            this.LauncherExploreBlopsDirGroupBox.ResumeLayout(false);
             this.LauncherApplicationsGroupBox.ResumeLayout(false);
             this.LauncherSplitter.Panel1.ResumeLayout(false);
             this.LauncherSplitter.Panel2.ResumeLayout(false);
@@ -1910,7 +2518,47 @@ namespace Form1
 
 		}
 
-		private bool IsMP()
+        private void LauncherExploreLocalizationPolishButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\polish\\localizedstrings\\");
+        }
+
+        private void LauncherExploreLocalizationKoreanButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\korean\\localizedstrings\\");
+        }
+
+        private void LauncherExploreLocalizationRussianButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\russian\\localizedstrings\\");
+        }
+
+        private void LauncherExploreLocalizationGermanButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\german\\localizedstrings\\");
+        }
+
+        private void LauncherExploreLocalizationItalianButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\italian\\localizedstrings\\");
+        }
+
+        private void LauncherExploreLocalizationFrenchButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\french\\localizedstrings\\");
+        }
+
+        private void LauncherExploreLocalizationSpanishButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\spanish\\localizedstrings\\");
+        }
+
+        private void LauncherExploreLocalizationEnglishButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\english\\localizedstrings\\");
+        }
+
+        private bool IsMP()
 		{
 			return Launcher.IsMP(mapName);
 		}
@@ -1927,7 +2575,7 @@ namespace Form1
 
         private void LauncherButtonSoundTool_Click(object sender, EventArgs e)
         {
-            LaunchProcess("asset_manager", "", null, consoleAttached: false, null);
+            LaunchProcess("ModSound_BuildTool", "", null, consoleAttached: false, null);
         }
 
         private void LauncherButtonBlender_Click(object sender, EventArgs e)
@@ -2318,8 +2966,8 @@ namespace Form1
 
 		private void LauncherWikiLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
 		{
-			Process.Start("http://wiki.modsrepository.com/");
-		}
+			Process.Start("https://wiki.zeroy.com/index.php?title=CODWAW");
+        }
 
 		private void LaunchProcessHelper(bool shouldRun, ProcessFinishedDelegate nextStage, Process lastProcess, string processName, string processOptions, string workingDirectory, string pathToExe = null)
 		{
@@ -2458,7 +3106,7 @@ namespace Form1
 			{
 				Launcher.DeleteFile(text, verbose: false);
 			}
-			LaunchProcessHelper(LauncherModBuildIwdFileCheckBox.Checked, ModBuildFinishedDelegate, lastProcess, "7za", "a \"" + text + "\" -tzip -r \"@" + Path.Combine(Launcher.GetModDirectory(modName), modName + ".files") + "\"", Launcher.GetModDirectory(modName));
+			LaunchProcessHelper(LauncherModBuildIwdFileCheckBox.Checked, ModBuildFinishedDelegate, lastProcess, "7za", "a \"" + text + "\" -tzip -r \"@" + Path.Combine(Launcher.GetModDirectory(modName), modName + ".files") + "\"", Launcher.GetModDirectory(modName), null);
 		}
 
 		private void ModBuildMoveModFastFileDelegate(Process lastProcess)
@@ -3169,6 +3817,141 @@ namespace Form1
 		{
 			LauncherRunGameModComboBox.DroppedDown = true;
 		}
+
+        private void LauncherExploreBlopsDirGameButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory());
+        }
+
+        private void LauncherExploreBlopsDirConfigsButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "players\\");
+        }
+
+        private void LauncherExploreBlopsDirModsButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "mods\\");
+        }
+
+        private void LauncherExploreDevDirBinButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "bin\\");
+        }
+
+        private void LauncherExploreDevDirMapSrcButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "map_source\\");
+        }
+
+        private void LauncherExploreDevDirModelExportButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "model_export\\");
+        }
+
+        private void LauncherExploreDevDirRawButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\");
+        }
+
+        private void LauncherExploreDevDirSrcDataButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "source_data\\");
+        }
+
+        private void LauncherExploreDevDirTextureAssetsButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "texture_assets\\");
+        }
+
+        private void LauncherExploreDevDirZoneSourceButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "zone_source\\");
+        }
+
+        private void LauncherExploreRawDirAnimTreesButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\animtrees\\");
+        }
+
+        private void LauncherExploreRawDirCSCButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\clientscripts\\");
+        }
+
+        private void LauncherExploreRawDirFXButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\fx\\");
+        }
+
+        private void LauncherExploreRawDirGSCButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\maps\\");
+        }
+
+        private void LauncherExploreRawDirMPButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\mp\\");
+        }
+
+        private void LauncherExploreRawDirSoundAliasesButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\soundaliases\\");
+        }
+
+        private void LauncherExploreRawDirVisionButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\vision\\");
+        }
+
+        private void LauncherExploreRawDirWeaponsButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\weapons\\");
+        }
+
+        private void LauncherExploreRawGSCDirSPButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\maps\\");
+        }
+
+        private void LauncherExploreRawGSCDirSPArtButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\maps\\createart\\");
+        }
+
+        private void LauncherExploreRawGSCDirSPFXButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\maps\\createfx\\");
+        }
+
+        private void LauncherExploreRawGSCDirSPGametypesButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\maps\\gametypes\\");
+        }
+
+        private void LauncherExploreRawGSCDirSPVoiceButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\maps\\voice\\");
+        }
+
+        private void LauncherExploreRawGSCDirMPButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\maps\\mp\\");
+        }
+
+        private void LauncherExploreRawGSCDirMPArtButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\maps\\mp\\createart\\");
+        }
+
+        private void LauncherExploreRawGSCDirMPFXButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\maps\\mp\\createfx\\");
+        }
+
+        private void LauncherExploreRawGSCDirMPGametypesButton_Click(object sender, EventArgs e)
+        {
+            ExploreOpenDir(Launcher.GetRootDirectory() + "raw\\maps\\mp\\gametypes\\");
+        }
 
         private void ExploreOpenDir(string dir)
         {
