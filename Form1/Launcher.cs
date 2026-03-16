@@ -11,6 +11,8 @@ namespace Form1
 {
 	internal static class Launcher
 	{
+		public static string selectedMapFilter = "All";
+
 		public static DVar[] dvars = new DVar[11]
 		{
 			new DVar("devmap", "Run the map in developer mode on startup [Must be compiled & exist in mod/zone folder]"),
@@ -499,6 +501,7 @@ namespace Form1
 
 		public static string[] GetProperMapList(string[] mapList, bool ignoreBuilds, bool ignoreMP)
 		{
+			ignoreMP = true;
 			List<string> list = new List<string>();
 			foreach (string text in mapList)
 			{
