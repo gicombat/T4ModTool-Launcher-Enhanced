@@ -642,6 +642,11 @@ namespace Form1
 			return CanonicalDirectory(Path.Combine(GetRootDirectory(), "zone_source"));
 		}
 
+		public static string[] GetZoneSourceFiles()
+		{
+			return GetFilesWithoutExtension(GetZoneSourceDirectory(), "*.csv");
+		}
+
 		public static string GetZoneSourceFile(string mapName)
 		{
 			return Path.Combine(GetZoneSourceDirectory(), mapName + ".csv");
