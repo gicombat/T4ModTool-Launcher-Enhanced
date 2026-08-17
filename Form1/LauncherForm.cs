@@ -1375,7 +1375,8 @@ namespace Form1
             "SP",
             "MP",
             "nazi_zombie",
-            "only csv"});
+            "only csv", 
+            "only localized"});
             this.LauncherMapListFilterComboBox.Location = new System.Drawing.Point(6, 10);
             this.LauncherMapListFilterComboBox.Name = "LauncherModSpecificMapComboBox";
             this.LauncherMapListFilterComboBox.Size = new System.Drawing.Size(204, 20);
@@ -2282,7 +2283,7 @@ namespace Form1
             this.LauncherExploreBlopsDirConfigsButton.TabIndex = 10;
             this.LauncherExploreBlopsDirConfigsButton.Text = "Player Configs";
             this.LauncherExploreBlopsDirConfigsButton.UseVisualStyleBackColor = true;
-            this.LauncherExploreBlopsDirGameButton.Click += new System.EventHandler(this.LauncherExploreBlopsDirConfigsButton_Click);
+            this.LauncherExploreBlopsDirConfigsButton.Click += new System.EventHandler(this.LauncherExploreBlopsDirConfigsButton_Click);
 
             // 
             // LauncherExploreBlopsDirModsButton
@@ -2294,7 +2295,7 @@ namespace Form1
             this.LauncherExploreBlopsDirModsButton.TabIndex = 9;
             this.LauncherExploreBlopsDirModsButton.Text = "Mods Folder";
             this.LauncherExploreBlopsDirModsButton.UseVisualStyleBackColor = true;
-            this.LauncherExploreBlopsDirGameButton.Click += new System.EventHandler(this.LauncherExploreBlopsDirModsButton_Click);
+            this.LauncherExploreBlopsDirModsButton.Click += new System.EventHandler(this.LauncherExploreBlopsDirModsButton_Click);
 
             // 
             // LauncherExploreBlopsDirGameButton
@@ -3507,6 +3508,11 @@ namespace Form1
                 {
 					zoneSourList.RemoveAll(x => x == map);
 				}
+				filteredMap = zoneSourList.ToArray();
+			}
+			else if (Launcher.selectedMapFilter == "only localized")
+			{
+				var zoneSourList = Launcher.GetZoneSourceFiles().ToList().FindAll(x => x.Contains("localized") );
 				filteredMap = zoneSourList.ToArray();
 			}
 			else
